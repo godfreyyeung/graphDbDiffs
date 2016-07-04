@@ -35,9 +35,9 @@ function addNode(uri, posInTriple, graphNodes, labels, graphConstraints, level){
 		//apparently cola.js lib requires width and height properties
 		//So I can't make my code cleaner elsewhere by just deriving them from isPred
 		if(isPredicate){
-			node = {"name": label, "uri":uri, "level": level, "isPred": 1, "width": 120, "height": 50, "x": (posInTriple-1)*100};
+			node = {"name": label, "uri":uri, "level": level, "isPred": 1, "width": 130, "height": 45};
 		} else {
-			node = {"name": label, "uri":uri, "level": level, "isPred": 0, "width": 90, "height": 70, "x": (posInTriple-1)*100};
+			node = {"name": label, "uri":uri, "level": level, "isPred": 0, "width": 100, "height": 70};
 		}
 		var nodeIdx = graphNodes.push(node) - 1;
 		while(!(graphConstraints.length - 1 >= level)){

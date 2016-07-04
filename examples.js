@@ -34,8 +34,7 @@ var examplesNT = [
 			{
 				"dbName": "WikiData",
 				"triples": [
-					"https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q1153376",
-					"",
+					"https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q1153376"
 				]
 			}
 		]
