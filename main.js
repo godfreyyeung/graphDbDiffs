@@ -1,32 +1,24 @@
-var svgParentDom = ".svgArea";
-var width = 800,
-    height = 400;
+var svgParentDom = "#dbExamples";
 
 var color = d3.scale.category10();
 
-var d3cola = cola.d3adaptor()
-    .flowLayout('y', 50)
-    .linkDistance(120)
-    .avoidOverlaps(false)
-    .size([width, height]);
-
-var svg = d3.select(svgParentDom).append("svg")
-    .attr("width", width)
-    .attr("height", height);
+var width = 400;
+var height = 800;
 
 
-function setForceSize(parentDomNode, svgElement){
+function setForceSize(parentDomNode, svgElement, colaObj){
     svgElement.width = $(parentDomNode).width(), svgElement.height = $(parentDomNode).height();
-    d3cola.size([svgElement.width, svgElement.height]).resume();
+    colaObj.size([svgElement.width, svgElement.height]).resume();
 }
 
-setForceSize(svgParentDom, svg);
-window.onresize = function(){setForceSize(svgParentDom, svg)};
-
-graph1 = dbExampleToGraph(examplesNT[0].databases[0], labels);
-
-
-
-update(graph1);
-
+var exampleNav = $("#examples");
+differences.forEach(function(curVal, idx, arr){
+    var difference = curVal;
+    var newBtn = $('<div class="exampleBtn">'+difference.name+'</div>');
+    newBtn.click(function(evt){
+        removeGraphs();
+        spawnGraphsAdapter(difference);
+    })
+    exampleNav.append(newBtn);
+});
 

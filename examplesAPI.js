@@ -1,6 +1,7 @@
 // examplesAPI
 
 function getLastToken(uri, delimiter){
+
 	var lastToken;
 	var tokenizedUri = uri.split("/");
 	lastToken = tokenizedUri[tokenizedUri.length-1];
@@ -11,13 +12,14 @@ function getLastToken(uri, delimiter){
 function getLabel(uri, labels){
 	var label = "";
 	//check if corresponding label is on shelf
-	if(labels[uri])
+	if(labels[uri]){
 		label = labels[uri];
+	}
 	//else acquire characters after the last fwd slash in uri
-	else
+	else {
 		label = getLastToken(uri,"/");
-		return label;
-	return
+	}
+	return label;
 }
 
 function addNode(uri, posInTriple, graphNodes, labels, graphConstraints, level){
@@ -31,6 +33,7 @@ function addNode(uri, posInTriple, graphNodes, labels, graphConstraints, level){
 		}
 	});
 	if(!added){
+
 		label = getLabel(uri, labels);
 		//apparently cola.js lib requires width and height properties
 		//So I can't make my code cleaner elsewhere by just deriving them from isPred
@@ -91,6 +94,7 @@ function dbExampleToGraph(dbExample, labels){
 	// creates new object each call, since the function's stack is destroyed upon return.
 	// However, each created graph obj is maintained on stack. Thus references towards these objects remain.
 	var graph = {};
+	graph.name = dbExample.dbName;
 	graph.nodes = [];
 	graph.links = [];
 	graph.constraints = [];

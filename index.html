@@ -28,7 +28,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
         }
 
         .label {
-            fill: white;
+            fill: black;
             font-family: Verdana;
             font-size: 12px;
             text-anchor: middle;
@@ -43,14 +43,27 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
         </style>
     </head>
     <body>
-        <div class="container" style="width: 100%;">
-            <div class="sidebar col-md-3">
-                <h2>Graph DB Statement Visualizer</h2>
+        <div class="container">
+            <div class="row">
+                <div class="sidebar col-sm-2">
+                    <h2>Graph DB Statement Visualizer</h2>
+                    <div id="examples">
+                    </div>
+                    Blue nodes are subjects and objects. <br>
+                    Orange nodes are predicates. <br>
+                    Thus a triple consists of a blue, orange and another blue node chained together in order. <br>
+                    Statements about labels excluded. <br>
+                    NS = Namespace<br>
+                    DB = Database
+                </div>
+                <div class="svgArea col-sm-10 nopadding">
+                    <row class="container nopadding" id="dbExamples">
+                    </row>
+                </div>
             </div>
-            <div class="svgArea col-md-9"></div>
         </div>
     </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
     <script src="bootstrap.min.js"></script>
     <script src="d3.v3.js"></script>
     <script src="cola.min.js"></script>
