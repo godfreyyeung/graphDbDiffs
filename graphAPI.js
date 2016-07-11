@@ -20,7 +20,10 @@ function wrappedLabel(data){
             sum = 0;
         }
     });
-
+    $(textElement).click(function(e){
+        window.open(data.uri, 'window name', 'window settings');
+        return false;
+    })
     return textElement;
 }
 
@@ -81,6 +84,7 @@ function update(newGraph, colaForce, newSvg){
      var link = svg.selectAll(".link")
         .data(graph.links);
     link.enter().append("polyline")
+        .attr("stroke", function(d) {return d.color})
         .attr("class", "link")
         .attr("marker-mid", "url(#end)");
     link.exit().remove();
@@ -101,7 +105,7 @@ function update(newGraph, colaForce, newSvg){
         .attr("width", function (d) { return d.width; })
         .attr("height", function (d) { return d.height; })
         .attr("rx", 5).attr("ry", 5)
-        .style("fill", function (d) { return color(d.isPred); })
+        .style("fill", function (d) { return nodeColor(d.isPred); })
         .call(d3cola.drag);
     node.exit().remove();
 
@@ -150,7 +154,7 @@ function update(newGraph, colaForce, newSvg){
 
         label.attr("x", function (d) { return d.x})
              .attr("y", function (d) {
-                 var h = this.getBBox().height;
+                 var h = d.height;//this.getBBox().height;
                  return d.y + h/4;
              });
         label.each(function(d,i){
@@ -184,6 +188,7 @@ function spawnGraphs(difference){
         var newDiv = document.createElement("div");
         newDiv.className = "col-lg-"+colWidth+" nopadding dbCol";
         var newSvg = d3.select(newDiv).append("svg");
+        newSvg[0][0].setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
         // build the arrow.
         newSvg.append("svg:defs").selectAll("marker")
             .data(["end"])      // Different link/path types can be defined here

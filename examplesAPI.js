@@ -64,7 +64,7 @@ function getNode(uri, graphNodes){
 	return node;
 }
 
-function addLinkByUris(sourceUri, targetUri, graphLinks, graphNodes){
+function addLinkByUris(sourceUri, targetUri, graphLinks, graphNodes, color){
 	var added = 0;
 	graphLinks.forEach(function(curVal, idx, arr){
 		if ( (curVal.sourceUri == sourceUri) && (curVal.targetUri == targetUri)) {
@@ -74,11 +74,11 @@ function addLinkByUris(sourceUri, targetUri, graphLinks, graphNodes){
 	if(!added){
 		var source = getNode(sourceUri, graphNodes);
 		var target = getNode(targetUri, graphNodes);
-		graphLinks.push({"source": source, "target": target, "sourceUri": sourceUri, "targetUri": targetUri});
+		graphLinks.push({"source": source, "target": target, "sourceUri": sourceUri, "targetUri": targetUri, "color": color});
 	}
 }
 
-function addLinkByNodes(sourceNode, targetNode, graphLinks, graphNodes){
+function addLinkByNodes(sourceNode, targetNode, graphLinks, graphNodes, color){
 	var added = 0;
 	graphLinks.forEach(function(curVal, idx, arr){
 		if ( (curVal.source == sourceNode) && (curVal.target == targetNode)) {
@@ -86,7 +86,7 @@ function addLinkByNodes(sourceNode, targetNode, graphLinks, graphNodes){
 		}
 	});
 	if(!added){
-		graphLinks.push({"source": sourceNode, "target": targetNode, "sourceUri": sourceUri, "targetUri": targetUri});
+		graphLinks.push({"source": sourceNode, "target": targetNode, "sourceUri": sourceUri, "targetUri": targetUri, "color": color});
 	}
 }
 
@@ -110,9 +110,9 @@ function dbExampleToGraph(dbExample, labels){
 			predicateNode = addNode(entities[1], 1, graph.nodes, labels, graph.constraints, subjectNode.level + 1);
 			objectNode = addNode(entities[2], 2, graph.nodes, labels, graph.constraints, predicateNode.level + 1); // really just subjectNode+2, but this way is more flexbile
 		}
-
-		addLinkByUris(entities[0], entities[1], graph.links, graph.nodes);
-		addLinkByUris(entities[1], entities[2], graph.links, graph.nodes);
+		var colorBySubjectLevel = (idx) ? linkColor(subjectNode.level) : linkColor(0);
+		addLinkByUris(entities[0], entities[1], graph.links, graph.nodes, colorBySubjectLevel);
+		addLinkByUris(entities[1], entities[2], graph.links, graph.nodes, colorBySubjectLevel);
 	});
 
 	return graph;

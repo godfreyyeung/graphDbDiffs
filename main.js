@@ -1,6 +1,7 @@
 var svgParentDom = "#dbExamples";
 
-var color = d3.scale.category10();
+var nodeColor = d3.scale.category10();
+var linkColor = d3.scale.category10().domain([0,5]);
 
 var width = 400;
 var height = 800;

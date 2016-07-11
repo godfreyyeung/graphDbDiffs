@@ -36,12 +36,14 @@ var differences = [
 				"dbName": "NS: Wikidata | Database: Wikidata.org",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q667443 http:www.wikidata.org/wiki/Property:P606 2_November_1947",
-					"https://www.wikidata.org/wiki/Q667443 https://www.wikidata.org/wiki/Property:P31 2_November_1947",
 					"http:www.wikidata.org/wiki/Property:P606 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18636219",
 					"http:www.wikidata.org/wiki/Property:P606 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q23069609",
 					"http:www.wikidata.org/wiki/Property:P606 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q24041613",
 					"http:www.wikidata.org/wiki/Property:P606 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q1362364",
-					"https://www.wikidata.org/wiki/Q1362364 https://www.wikidata.org/wiki/Property:P279 https://www.wikidata.org/wiki/Q15921555"
+					"http:www.wikidata.org/wiki/Property:P606 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P793",
+					"https://www.wikidata.org/wiki/Q1362364 https://www.wikidata.org/wiki/Property:P279 https://www.wikidata.org/wiki/Q15921555",
+					"https://www.wikidata.org/wiki/Property:P793 https://www.wikidata.org/wiki/Property:P1646 https://www.wikidata.org/wiki/Property:P585",
+					"https://www.wikidata.org/wiki/Property:P793 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q2245405"
 				],
 			}
 		]
@@ -94,6 +96,9 @@ var labels = {
 	"https://www.wikidata.org/wiki/Property:P279": "subclass of",
 	"https://www.wikidata.org/wiki/Property:P1629": "subject item of this property",
 	"https://www.wikidata.org/wiki/Q18636219": "Wikidata property with datatype ‘time’",
+	"https://www.wikidata.org/wiki/Property:P1646": "mandatory qualifier",
+	"https://www.wikidata.org/wiki/Property:P585": "point in time",
+	"https://www.wikidata.org/wiki/Q2245405": "key event",
 	// common rdf namespace
 	"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "rdf:type",
 	"http://www.w3.org/1999/02/22-rdf-syntax-ns#Property": "rdf:property",
@@ -122,8 +127,11 @@ var labels = {
 	"http:www.wikidata.org/wiki/Property:P606": "first flight",
 	"2_November_1947": "2 November 1947",
 	"https://www.wikidata.org/wiki/Q24041613": "Wikidata property for aircrafts",
+	"https://www.wikidata.org/wiki/Q23069609": "Wikidata property related to air transport",
 	"https://www.wikidata.org/wiki/Q1362364": "maiden flight",
 	"https://www.wikidata.org/wiki/Q15921555": "flight",
+	"https://www.wikidata.org/wiki/Property:P1647":"subproperty of",
+	"https://www.wikidata.org/wiki/Property:P793":"significant event",
 	//coordinate location
 	"https://www.wikidata.org/wiki/Property:P625": "coordinate location",
 	"https://www.wikidata.org/wiki/Q18615777": "Wikidata property to indicate a location",
