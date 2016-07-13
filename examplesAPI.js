@@ -43,7 +43,7 @@ function addNode(uri, posInTriple, graphNodes, labels, graphConstraints, level){
 			node = {"name": label, "uri":uri, "level": level, "isPred": 0, "width": 100, "height": 70};
 		}
 		var nodeIdx = graphNodes.push(node) - 1;
-		while(!(graphConstraints.length - 1 >= level)){
+		while(graphConstraints.length<=level){
 			graphConstraints.push({
 				"type":"alignment",
 				"axis":"y",
@@ -55,11 +55,14 @@ function addNode(uri, posInTriple, graphNodes, labels, graphConstraints, level){
 	return node;
 }
 
+// returns node if node w/ given uri found
+// -1 otherwise
 function getNode(uri, graphNodes){
-	var node = {};
+	var node = -1;
 	graphNodes.forEach(function(curVal, idx, arr){
-		if(uri == curVal.uri)
+		if(uri == curVal.uri){
 			node = curVal;
+		}
 	});
 	return node;
 }
@@ -101,18 +104,25 @@ function dbExampleToGraph(dbExample, labels){
 	dbExample.triples.forEach(function(curVal, idx, arr){
 		triple = curVal;
 		entities = triple.split(" ");
+		var subjectNode = {};
 		if(idx == 0){
 			addNode(entities[0], 0, graph.nodes, labels, graph.constraints, 0);
 			addNode(entities[1], 1, graph.nodes, labels, graph.constraints, 0);
 			addNode(entities[2], 2, graph.nodes, labels, graph.constraints, 0);
 		} else {
 			subjectNode = getNode(entities[0], graph.nodes); // assume subjects are always already added
-			predicateNode = addNode(entities[1], 1, graph.nodes, labels, graph.constraints, subjectNode.level + 1);
-			objectNode = addNode(entities[2], 2, graph.nodes, labels, graph.constraints, predicateNode.level + 1); // really just subjectNode+2, but this way is more flexbile
+			if(subjectNode == -1){
+				alert("A triple does not connect to previous triples.");
+			} else{
+				predicateNode = addNode(entities[1], 1, graph.nodes, labels, graph.constraints, subjectNode.level + 1);
+				objectNode = addNode(entities[2], 2, graph.nodes, labels, graph.constraints, predicateNode.level + 1); // really just subjectNode+2, but this way is more flexbile
+			}
 		}
-		var colorBySubjectLevel = (idx) ? linkColor(subjectNode.level) : linkColor(0);
-		addLinkByUris(entities[0], entities[1], graph.links, graph.nodes, colorBySubjectLevel);
-		addLinkByUris(entities[1], entities[2], graph.links, graph.nodes, colorBySubjectLevel);
+		if(!(subjectNode == -1)){
+			var colorBySubjectLevel = (idx) ? linkColor(subjectNode.level) : linkColor(0);
+			addLinkByUris(entities[0], entities[1], graph.links, graph.nodes, colorBySubjectLevel);
+			addLinkByUris(entities[1], entities[2], graph.links, graph.nodes, colorBySubjectLevel);
+		}
 	});
 
 	return graph;
