@@ -88,7 +88,7 @@ var differences =
 		]
 	},
 	{
-		"name": "FC-home stadium-stadium",
+		"name": "team-home stadium-stadium",
 		"diffCats": [1,2,3],
 		"description": "",
 		"databases": [
@@ -128,28 +128,33 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: DBPedia->DBPedia/Freebase | Database: FactForge",
+				"dbName": "NS: DBPedia | Database: DBPedia.org",
 				"triples": [
-					"http://rdf.freebase.com/ns/m.080_y http://rdf.freebase.com/ns/sports.sports_team.arena_stadium http://dbpedia.org/resource/Mestalla_Stadium",
-					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/ontology/ground http://dbpedia.org/resource/Estadio_Mestalla",
-					//"http://dbpedia.org/resource/Estadio_Mestalla http://dbpedia.org/ontology/wikiPageRedirects http://dbpedia.org/resource/Mestalla_Stadium",
-					//"http://dbpedia.org/resource/Estadio_Mestalla http://dbpedia.org/ontology/wikiPageWikiLink http://dbpedia.org/resource/Mestalla_Stadium",
-					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/property/ground http://dbpedia.org/resource/Valencia",
-					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/property/ground http://dbpedia.org/resource/Mestalla_Stadium",
-					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/property/ground http://dbpedia.org/resource/Estadio_Mestalla"
+					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/property/owner http://dbpedia.org/resource/Peter_Lim",
+					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/ontology/owner http://dbpedia.org/resource/Peter_Lim",
+					"http://dbpedia.org/ontology/owner http://www.w3.org/2002/07/owl#equivalentProperty https://www.wikidata.org/wiki/Property:P127",
+					"http://dbpedia.org/ontology/owner https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Agent"
 				]
 			}
 		]
 	},
 	{
-		"name": "stadium-locatedIn-location",
+		"name": "stadium-in-city-in-country",
 		"diffCats": [1,2,3],
-		"description": "",
+		"description": "Comparing a two-part statement",
 		"databases": [
+			{
+				"dbName": "NS: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/Mestalla_Stadium http://dbpedia.org/property/location 46010",
+					"http://dbpedia.org/resource/Mestalla_Stadium http://dbpedia.org/property/location Avenida_Suecia,_s/n_(en)",
+				]
+			},
 			{
 				"dbName": "NS: WikiData | Database: Wikidata.org",
 				"triples": [
-					"https://www.wikidata.org/wiki/Q10333 https://www.wikidata.org/wiki/Property:P115 https://www.wikidata.org/wiki/Q202762"
+					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q8818",
+					"https://www.wikidata.org/wiki/Q8818 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29"
 				]
 			},
 			{
@@ -160,9 +165,39 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: Freebase & DBPedia | Database: FactForge",
+				"dbName": "NS: DBPedia->Freebase/DBPedia | Database: FactForge",
 				"triples": [
-					"http://rdf.freebase.com/ns/m.080_y http://rdf.freebase.com/ns/sports.sports_team.arena_stadium http://dbpedia.org/resource/Mestalla_Stadium",
+					"http://dbpedia.org/resource/Mestalla_Stadium http://rdf.freebase.com/ns/location.location.containedby http://dbpedia.org/resource/Valencia",
+					"http://dbpedia.org/resource/Valencia http://dbpedia.org/ontoloy/country http://dbpedia.org/resource/Spain",
+					"http://dbpedia.org/resource/Valencia http://rdf.freebase.com/ns/location.location.containedby http://dbpedia.org/resource/Spain"
+				]
+			}
+		]
+	},
+	{
+		"name": "team-owner-person",
+		"diffCats": [1,2,3],
+		"description": "",
+		"databases": [
+			{
+				"dbName": "NS: WikiData | Database: Wikidata.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q10333 https://www.wikidata.org/wiki/Property:P127 https://www.wikidata.org/wiki/Q7175463",
+					"https://www.wikidata.org/wiki/Property:P127 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q16869121",
+					"https://www.wikidata.org/wiki/Property:P127 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
+					"https://www.wikidata.org/wiki/Property:P127 https://www.wikidata.org/wiki/Property:P580 May_2014"
+				]
+			},
+			{
+				"dbName": "NS: freebase/dbpedia | DB: Factforge.net",
+				"triples": [
+					"None_for freebase/dbpedia factforge"
+				]
+			},
+			{
+				"dbName": "NS: freebase/dbpedia | DB: fluidops/openlinksw",
+				"triples": [
+					"None_for freebase/dbpedia fluidops/openlinksw"
 				]
 			}
 		]
