@@ -12,6 +12,7 @@ var labels = {
 	"https://www.wikidata.org/wiki/Property:P2308":"class (qualifier)",
 	"https://www.wikidata.org/wiki/Property:P2309":"relation (qualifier)",
 	"https://www.wikidata.org/wiki/Q21503252":"instance of (type constr rel)",
+	"https://www.wikidata.org/wiki/Property:P1687": "Wikidata property",
 	// common rdf namespace
 	"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "rdf:type",
 	"http://www.w3.org/1999/02/22-rdf-syntax-ns#Property": "rdf:property",
@@ -104,5 +105,39 @@ var labels = {
 	"https://www.wikidata.org/wiki/Property:P580": "wd:start time",
 	//team owner dbpedia
 	"http://dbpedia.org/resource/Peter_Lim": "dbr:Peter Lim",
-	"http://dbpedia.org/ontology/Agent": "dbo:Agent"
+	"http://dbpedia.org/ontology/Agent": "dbo:Agent",
+	//taxon wikidata
+	"https://www.wikidata.org/wiki/Q47542": "wd:Castor a.k.a Beaver",
+	"https://www.wikidata.org/wiki/Property:P105": "wd:taxon rank",
+	"https://www.wikidata.org/wiki/Q34740": "wd:genus",
+	"https://www.wikidata.org/wiki/Property:P225": "wd:taxon name",
+	//taxon dbpedia
+	"http://dbpedia.org/resource/Beaver": "dbr:Beaver",
+	"http://dbpedia.org/property/genus": "dbp:genus",
+	//parent_taxon wikidata
+	"https://www.wikidata.org/wiki/Q261363": "wd:Castoridae",
+	"https://www.wikidata.org/wiki/Property:P171": "wd:parent_taxon",
+	//parent_taxon dbpedia
+	"http://dbpedia.org/property/familia": "dbp:familia",
+	"http://dbpedia.org/ontology/family": "dbo:family",
+	"http://dbpedia.org/resource/Castoridae": "dbr:Catoridae",
+	//parent_body wikidata
+	"https://www.wikidata.org/wiki/Q111": "wd:Mars",
+	"https://www.wikidata.org/wiki/Property:P397": "wd:Parent astronomical body",
+	"https://www.wikidata.org/wiki/Q7243056": "wd:Primary body",
+	"https://www.wikidata.org/wiki/Q525": "wd:Sun",
+	//parent_body dbpedia
+	"http://dbpedia.org/resource/Mars": "db:Mars",
+	"http://rdf.freebase.com/ns/astronomy.orbital_relationship.orbits": "fb:astronomy. orbital_relationship. orbits",
+	"http://rdf.freebase.com/ns/base.exoplanetology.exoplanet.parent_star": "fb:base. exoplanetology. exoplanet. parent_Star",
+	"http://rdf.freebase.com/ns/base.satelites.natural_satellite.orbited_body": "fb:base.satelites natural_satellite. orbited_body",
+	"http://dbpedia.org/resource/Sun": "dbr:Sun",
+	//orbital_period wikidata
+	"https://www.wikidata.org/wiki/Property:P2146": "wd:Orbital period (1)",
+	"https://www.wikidata.org/wiki/Q37640": "wd:Orbital period (2)",
+	"https://www.wikidata.org/wiki/Property:P2047": "wd:Duration (1)",
+	"https://www.wikidata.org/wiki/Q21886162": "wd:Duration (2)",
+	"https://www.wikidata.org/wiki/Q1790144": "wd:Unit of time",
+	"https://www.wikidata.org/wiki/Property:P2876": "wd:type of unit for this property",
+	"https://www.wikidata.org/wiki/Property:P1382": "wd:Coincident with"
 }

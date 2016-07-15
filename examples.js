@@ -17,7 +17,7 @@ var differences =
 				"dbName": "Namespace: DBPedia | Database: Factforge.net & DBPedia.org",
 				"triples": [
 					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://dbpedia.org/property/firstFlight 1947-11-02(xsd:date)",
-					"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+					"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
 				]
 			},
 			{
@@ -126,15 +126,6 @@ var differences =
 					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/property/ground http://dbpedia.org/resource/Mestalla_Stadium",
 					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/property/ground http://dbpedia.org/resource/Estadio_Mestalla"
 				]
-			},
-			{
-				"dbName": "NS: DBPedia | Database: DBPedia.org",
-				"triples": [
-					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/property/owner http://dbpedia.org/resource/Peter_Lim",
-					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/ontology/owner http://dbpedia.org/resource/Peter_Lim",
-					"http://dbpedia.org/ontology/owner http://www.w3.org/2002/07/owl#equivalentProperty https://www.wikidata.org/wiki/Property:P127",
-					"http://dbpedia.org/ontology/owner https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Agent"
-				]
 			}
 		]
 	},
@@ -189,6 +180,15 @@ var differences =
 				]
 			},
 			{
+				"dbName": "NS: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/property/owner http://dbpedia.org/resource/Peter_Lim",
+					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/ontology/owner http://dbpedia.org/resource/Peter_Lim",
+					"http://dbpedia.org/ontology/owner http://www.w3.org/2002/07/owl#equivalentProperty https://www.wikidata.org/wiki/Property:P127",
+					"http://dbpedia.org/ontology/owner https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Agent"
+				]
+			},
+			{
 				"dbName": "NS: freebase/dbpedia | DB: Factforge.net",
 				"triples": [
 					"None_for freebase/dbpedia factforge"
@@ -200,6 +200,93 @@ var differences =
 					"None_for freebase/dbpedia fluidops/openlinksw"
 				]
 			}
+		]
+	},
+	{
+		"name": "beaver-taxon-name",
+		"description" : "The example between WikiData and DBPedia illustrates how two databases might have completely different views on a concept as well. Wikidata: beaver is the same as castor, which is a taxon, a group of some taxonomic rank, of the taxonomic rank genus. BEAVER/CASTOR IS THE TAXON ITSELF. DBPedia: Beaver is separate from the taxon itself. Beaver is just a thing. It HAS a taxon, specifically genus, of Castor. But wait.. many specific species of beavers, such as the north american or eurasian, is dbo:genus of Beaver. So perhaps it can be said that the statement dbr:Beaver-dbo:genus-dbr:Castor has no additional information that indicates that Beaver is the taxon in itself, nor do sibling statements with Beaver as teh subject. This must be inferred by inspecting sub-taxon (species) of beavers. WikiData's has more sophistication.",
+		"diffCats": [1,2,3],
+		"databases": [
+				{
+					"dbName": "NS: WikiData | DB: WikiData.org",
+					"triples": [
+						  "https://www.wikidata.org/wiki/Q47542 https://www.wikidata.org/wiki/Property:P105 https://www.wikidata.org/wiki/Q34740",
+						  "https://www.wikidata.org/wiki/Q47542 https://www.wikidata.org/wiki/Property:P225 Castor"
+					]
+				},
+				{
+					"dbName": "NS: DBPedia | DB: DBPedia.org",
+					"triples": [
+						  "http://dbpedia.org/resource/Beaver http://dbpedia.org/property/genus 'Castor(en)'"
+					]
+				}
+		]
+	},
+	{
+		"name": "beaver-parent_taxon-name",
+		"description" : "",
+		"diffCats": [1,2,3],
+		"databases": [
+				{
+					"dbName": "NS: WikiData | DB: WikiData.org",
+					"triples": [
+						  "https://www.wikidata.org/wiki/Q47542 https://www.wikidata.org/wiki/Property:P171 https://www.wikidata.org/wiki/Q261363"
+					]
+				},
+				{
+					"dbName": "NS: DBPedia | DB: DBPedia.org",
+					"triples": [
+						  "http://dbpedia.org/resource/Beaver http://dbpedia.org/property/familia http://dbpedia.org/resource/Castoridae",
+						  "http://dbpedia.org/resource/Beaver http://dbpedia.org/ontology/family http://dbpedia.org/resource/Castoridae"
+					]
+				}
+		]
+	},
+	{
+		"name": "mars-parent_body-sun",
+		"description" : "",
+		"diffCats": [1,2,3],
+		"databases": [
+				{
+					"dbName": "NS: WikiData | DB: WikiData.org",
+					"triples": [
+						  "https://www.wikidata.org/wiki/Q111 https://www.wikidata.org/wiki/Property:P397 https://www.wikidata.org/wiki/Q525",
+						  "https://www.wikidata.org/wiki/Property:P397 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q7243056"
+					]
+				},
+				{
+					"dbName": "NS: DBPedia->Freebase/DBPedia | DB: FactForge.org",
+					"triples": [
+						  "http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/astronomy.orbital_relationship.orbits http://dbpedia.org/resource/Sun",
+						  "http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/base.exoplanetology.exoplanet.parent_star http://dbpedia.org/resource/Sun",
+						  "http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/base.satelites.natural_satellite.orbited_body http://dbpedia.org/resource/Sun"
+					]
+				},
+		]
+	},
+	{
+		"name": "mars-orbital_period-duration",
+		"description" : "only a subset of the myrid of time-related triples included here, especially for wikidata",
+		"diffCats": [1,2,3],
+		"databases": [
+				{
+					"dbName": "NS: WikiData | DB: WikiData.org",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q111 https://www.wikidata.org/wiki/Property:P2146 668.5991±0.0001_Sol",
+						"https://www.wikidata.org/wiki/Property:P2146 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q37640",
+						"https://www.wikidata.org/wiki/Q37640 https://www.wikidata.org/wiki/Property:P1687 https://www.wikidata.org/wiki/Property:P2146",
+						"https://www.wikidata.org/wiki/Property:P2146 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P2047",
+						"https://www.wikidata.org/wiki/Property:P2047 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q21886162",
+						"https://www.wikidata.org/wiki/Property:P2047 https://www.wikidata.org/wiki/Property:P2876 https://www.wikidata.org/wiki/Q1790144",
+						"https://www.wikidata.org/wiki/Q21886162 https://www.wikidata.org/wiki/Property:P1382 https://www.wikidata.org/wiki/Q1790144"
+					]
+				},
+				{
+					"dbName": "NS: DBPedia->Freebase/DBPedia | DB: FactForge.org",
+					"triples": [
+
+					]
+				},
 		]
 	}
 ]
