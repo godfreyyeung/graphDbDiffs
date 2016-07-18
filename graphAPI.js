@@ -54,12 +54,11 @@ function update(newGraph, colaForce, newSvg){
     graphTitle.setAttributeNS(null, "x", "10");
     graphTitle.setAttributeNS(null, "y", "20");
     graphTitle.setAttributeNS(null, "font-size", "24");
-    //graphTitle.textContent(graph.name); 
     var titleText = document.createTextNode(graph.name);
     graphTitle.appendChild(titleText);
     // Todo: fix this hack.
     // apparently the svg parameter passed in is an array of arrays... not the svg elem itself
-    svg[0][0].appendChild(graphTitle); 
+    svg[0][0].appendChild(graphTitle);
 
     graph.nodes.forEach(function (v) { v.x = 400, v.y = 50 });
     d3cola
@@ -67,21 +66,8 @@ function update(newGraph, colaForce, newSvg){
         .links(graph.links)
         .constraints(graph.constraints)
         .start(2,23,2);
-    /** the key to configuring the node ordering along a guideline
-    is in changing the "unconstrainted iterations" parameter in layout.start()**/
 
-    // var link = svg.selectAll(".link")
-    //     .data(graph.links);
-    // link.enter().append("line")
-    //     .attr("class", "link");
-    // link.exit().remove();
-    // var path = svg.append("svg:g").selectAll("path")
-    //     .data(graph.links)
-    //   .enter().append("svg:path")
-    // //    .attr("class", function(d) { return "link " + d.type; })
-    //     .attr("class", "link")
-    //     .attr("marker-mid", "url(#end)");
-     var link = svg.selectAll(".link")
+    var link = svg.selectAll(".link")
         .data(graph.links);
     link.enter().append("polyline")
         .attr("stroke", function(d) {return d.color})
@@ -91,12 +77,6 @@ function update(newGraph, colaForce, newSvg){
 
     var guideline = svg.selectAll(".guideline")
         .data(graph.constraints.filter(function (c) { return c.type === 'alignment' }));
-
-    // guideline visualization disabled
-    // guideline.enter().append("line")
-    //     .attr("class", "guideline")
-    //     .attr("stroke-dasharray", "5,5");
-    // guideline.exit().remove();
 
     var node = svg.selectAll(".node")
         .data(graph.nodes);
@@ -121,20 +101,7 @@ function update(newGraph, colaForce, newSvg){
 
 
     d3cola.on("tick", function () {
-        // link.attr("x1", function (d) { return d.source.x})
-        //     .attr("y1", function (d) { return d.source.y; })
-        //     .attr("x2", function (d) { return d.target.x})
-        //     .attr("y2", function (d) { return d.target.y; });
-        // path.attr("d", function(d) {
-        //     var dx = d.target.x - d.source.x,
-        //         dy = d.target.y - d.source.y,
-        //         dr = 0;
-        //     return "M" + 
-        //         d.source.x + "," + 
-        //         d.source.y + "L" +
-        //         d.target.x + "," + 
-        //         d.target.y;
-        // });
+
         link.attr("points", function(d) {
               return d.source.x + "," + d.source.y + " " + (d.source.x + d.target.x)/2 + "," + (d.source.y + d.target.y)/2 + " " + d.target.x + "," + d.target.y; });
 
@@ -154,7 +121,7 @@ function update(newGraph, colaForce, newSvg){
 
         label.attr("x", function (d) { return d.x})
              .attr("y", function (d) {
-                 var h = d.height;//this.getBBox().height;
+                 var h = d.height;
                  return d.y + h/4;
              });
         label.each(function(d,i){
@@ -222,8 +189,18 @@ function spawnGraphs(difference){
             }
             toggleAvoidOverlaps(newd3cola, overlaps);
         })
-        $(newDiv).append(overlapBtn);
 
+        var linkDistSlider = $('<input class="linkDistSlider" type="text" data-slider-min="120" data-slider-max="350" data-slider-step="1" data-slider-value="120"/>');
+        $(newDiv).append(overlapBtn).append(linkDistSlider);
+        //slider initialization must be called AFTER the slider element is appended to the DOM
+        linkDistSlider.slider({
+            formatter: function(value) {
+                return 'Link Distance: '+value;
+            }
+        }).on("slide", function(slideEvt){
+            newd3cola.linkDistance(slideEvt.value);
+            newd3cola.start();
+        });
     })
 }
 

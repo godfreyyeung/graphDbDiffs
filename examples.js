@@ -10,7 +10,7 @@ var differences =
 [
 	{
 		"name": "Aircraft-First flight-date",
-		"diffCats": [1,2,3],
+		"diffCats": [2,3],
 		"description": "",
 		"databases": [
 			{
@@ -57,7 +57,7 @@ var differences =
 	},
 	{
 		"name": "coordinate location",
-		"diffCats": [1,2,3],
+		"diffCats": [1,3],
 		"description": "",
 		"databases": [
 			{
@@ -131,7 +131,7 @@ var differences =
 	},
 	{
 		"name": "stadium-in-city-in-country",
-		"diffCats": [1,2,3],
+		"diffCats": [1,3],
 		"description": "Comparing a two-part statement",
 		"databases": [
 			{
@@ -152,7 +152,8 @@ var differences =
 				"dbName": "NS: Yago | Database: Max Planck",
 				"triples": [
 					"Mestalla_Stadium isLocatedIn Spain",
-					"Mestalla_Stadium isLocatedIn Valencia"
+					"Mestalla_Stadium isLocatedIn Valencia",
+					"Valencia isLocatedIn Spain"
 				]
 			},
 			{
@@ -167,7 +168,7 @@ var differences =
 	},
 	{
 		"name": "team-owner-person",
-		"diffCats": [1,2,3],
+		"diffCats": [3],
 		"description": "",
 		"databases": [
 			{
@@ -282,11 +283,50 @@ var differences =
 					]
 				},
 				{
-					"dbName": "NS: DBPedia->Freebase/DBPedia | DB: FactForge.org",
+					"dbName": "NS: DBPedia | DB: FactForge.org",
 					"triples": [
-
+						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/orbitalPeriod 5.9354294400000006E7(xsd:double)",
+						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/orbitalPeriod 162501.12(xsd:double)",
+						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/orbitalPeriod 668.5991(xsd:double)",
+						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/Planet/orbitalPeriod 686.9710000000001(xsd:day)",
+						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/Planet/orbitalPeriod 1.8808(xsd:day)",
+						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/Planet/orbitalPeriod 0.007738415509259259(xsd:day)",
 					]
 				},
+				{
+					"dbName": "NS: DBPedia->Freebase | DB: FactForge.org",
+					"triples": [
+						"http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/astronomy.orbital_relationship.orbital_period 686.971"
+					]
+				}
+		]
+	},
+	{
+		"name": "band-band_member-person",
+		"description" : "highlights how different databases have different uses of the same predicate. DBPedia.org pairs currentMembers with a string contianing all members, while FactForge pairs currentMembers with individual band member entities.",
+		"diffCats": [1,2,3],
+		"databases": [
+				{
+					"dbName": "NS: WikiData | DB: WikiData.org",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q722232 https://www.wikidata.org/wiki/Property:P527 https://www.wikidata.org/wiki/Q2023856",
+					]
+				},
+				{
+					"dbName": "NS: DBPedia | DB: DBPedia.org",
+					"triples": [
+						"http://dbpedia.org/resource/Switchfoot http://dbpedia.org/ontology/bandMember http://dbpedia.org/resource/Jerome_Fontamillas",
+						"http://dbpedia.org/ontology/bandMember https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Band",
+						"http://dbpedia.org/ontology/bandMember https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Person",
+						"http://dbpedia.org/resource/Switchfoot http://dbpedia.org/property/currentMembers *JonForeman*TimForeman*ChadButler*JeromeFontamillas*DrewShirley(en)"
+					]
+				},
+				{
+					"dbName": "NS: Freebase->DBPedia | DB: FactForge.org",
+					"triples": [
+						"http://rdf.freebase.com/ns/m.0pr13 http://dbpedia.org/property/currentMembers http://dbpedia.org/resource/Jerome_Fontamillas",
+					]
+				}
 		]
 	}
 ]

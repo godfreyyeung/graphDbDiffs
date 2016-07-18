@@ -139,5 +139,33 @@ var labels = {
 	"https://www.wikidata.org/wiki/Q21886162": "wd:Duration (2)",
 	"https://www.wikidata.org/wiki/Q1790144": "wd:Unit of time",
 	"https://www.wikidata.org/wiki/Property:P2876": "wd:type of unit for this property",
-	"https://www.wikidata.org/wiki/Property:P1382": "wd:Coincident with"
+	"https://www.wikidata.org/wiki/Property:P1382": "wd:Coincident with",
+	//orbital_period dbpedia
+	"http://dbpedia.org/ontology/orbitalPeriod": "dbo:Orbital period",
+	"http://dbpedia.org/ontology/Planet/orbitalPeriod": "dbo: Planet/orbital_period",
+	"5.9354294400000006E7(xsd:double)": "5.93542944 00000006E7 (xsd:double)",
+	"162501.12(xsd:double)": "162501.12 (xsd:double)",
+	"668.5991(xsd:double)": "668.5991 (xsd:double)",
+	"686.9710000000001(xsd:day)": "686.971 0000000001 (xsd:day)",
+	"1.8808(xsd:day)": "1.8808 (xsd:day)",
+	"0.007738415509259259(xsd:day)": "0.00773841 5509259259 (xsd:day)",
+	//orbital_period freebase
+	"http://rdf.freebase.com/ns/astronomy.orbital_relationship.orbital_period": "astronomy. orbital_relationship. orbital_period",
+	//band member wikidata
+	"https://www.wikidata.org/wiki/Q722232": "wd:Switchfoot",
+	"https://www.wikidata.org/wiki/Property:P527": "wd:has part",
+	"https://www.wikidata.org/wiki/Q2023856": "wd:Jerome Fontamillas",
+	//band member dbpedia
+	"http://dbpedia.org/resource/Switchfoot": "dbr:Switchfoot",
+	"http://dbpedia.org/ontology/bandMember": "dbo:bandMember",
+	"http://dbpedia.org/resource/Jerome_Fontamillas": "dbr:Jerome Fontamillas",
+	"http://dbpedia.org/ontology/Band": "dbo:Band",
+	"http://dbpedia.org/ontology/Person": "dbo:Person",
+	"http://dbpedia.org/property/currentMembers": "dbp:currentMembers",
+	"*JonForeman*TimForeman*ChadButler*JeromeFontamillas*DrewShirley(en)": "*Jon Foreman * Tim Foreman * Chad Butler * Jerome Fontamillas * Drew Shirley (en)",
+	//band member freebase
+	"http://rdf.freebase.com/ns/m.0pr13": "fb:Switchfoot",
 }
+
+
+	686.971

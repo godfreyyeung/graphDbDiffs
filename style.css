@@ -67,6 +67,7 @@ svg {
 
 .dbCol{
   border-right: 1px solid rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .overlapBtn{
@@ -79,6 +80,27 @@ svg {
   border-radius: 5px;
   cursor: pointer;
 }
+
+
+.slider {
+  position: absolute;
+  bottom: 25px;
+  left: 50px;
+}
+
+.slider-selection {
+  background:  #339bb7 !important;
+}
+
+.slider-track-low, .slider-track-high{
+  background-color: #BABABA !important;
+}
+
+/*.linkDistSlider{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}*/
 
 path.link {
   fill: none;
