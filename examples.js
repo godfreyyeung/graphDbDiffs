@@ -4,10 +4,409 @@
 		1 - Structural
 		2 - Extension
 		3 - Contraction
+
+
+// template for each difference
+{
+		"name": "subjectconcept-predicateconcept-objectconcept",
+		"diffCats": [1,2,3],
+		"description": "some description of the difference highlighted by this example",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: Factforge.net & DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://dbpedia.org/property/firstFlight 1947-11-02(xsd:date)",
+					"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+				]
+			},
+		]
+	},
 **/
 
 var differences =
 [
+	{
+		"name": "film-director-person",
+		"diffCats": [2,3], // not catd
+		"description": "The comparison of DBPedia and Wikidata's statement for the claim highllights an extension+predicate difference.",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/director http://dbpedia.org/page/Stephen_Gyllenhaal",
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/director http://dbpedia.org/page/Stephen_Gyllenhaal",
+					"http://dbpedia.org/ontology/director https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Person",
+					"http://dbpedia.org/property/director https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Person"
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase->Freebase/DBPedia | Database: FactForge.net",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.directed_by http://dbpedia.org/resource/Stephen_Gyllenhaal",
+				]
+			},
+			{
+				"dbName": "Namespace: Linked Movie Database | Database: Linked Movie Database",
+				"triples": [
+					"http://data.linkedmdb.org/page/film/17746 http://data.linkedmdb.org/resource/movie/director http://data.linkedmdb.org/page/director/10534",
+				]
+			},
+			{
+				"dbName": "Namespace: Wikidata | Database: Wikidata.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P57 https://www.wikidata.org/wiki/Q469233",
+					"https://www.wikidata.org/wiki/Property:P57 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
+					"https://www.wikidata.org/wiki/Q18618644 https://www.wikidata.org/wiki/Property:P1568 https://www.wikidata.org/wiki/Q386724",
+					"https://www.wikidata.org/wiki/Property:P57 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q3455803"
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"Homegrown_film directed Stephen_Gyllenhaal",
+					"directed https://www.w3.org/2000/01/rdf-schema#domain wordnet_person_100007846",
+					"directed https://www.w3.org/2000/01/rdf-schema#range wordnet_movie_10661386",
+				]
+			}
+		]
+	},
+	{
+		"name": "film-hasActor-actor",
+		"diffCats": [1,2,3], // not catd
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/starring http://dbpedia.org/resource/Billy_Bob_Thornton",
+					"http://dbpedia.org/ontology/starring https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Work",
+					"http://dbpedia.org/ontology/starring https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Actor"
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase->Freebase/DBPedia | Database: FactForge.net",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02r53vq http://dbpedia.org/property/starring http://dbpedia.org/resource/Billy_Bob_Thornton",
+				]
+			},
+			{
+				"dbName": "Namespace: Linked Movie Database | Database: Linked Movie Database",
+				"triples": [
+					"http://data.linkedmdb.org/resource/film/17746 http://data.linkedmdb.org/resource/movie/performance http://data.linkedmdb.org/resource/actor/29395",
+				]
+			},
+			{
+				"dbName": "Namespace: Wikidata | Database: Wikidata.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P161 https://www.wikidata.org/wiki/Q202735",
+					"https://www.wikidata.org/wiki/Property:P161 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q22965162",
+					"https://www.wikidata.org/wiki/Q22965162 https://www.wikidata.org/wiki/Property:P2302 https://www.wikidata.org/wiki/Q21503250",
+					"https://www.wikidata.org/wiki/Q21503250 https://www.wikidata.org/wiki/Property:P2308 https://www.wikidata.org/wiki/Q11424",
+					"https://www.wikidata.org/wiki/Q21503250 https://www.wikidata.org/wiki/Property:P2309 https://www.wikidata.org/wiki/Q21503252",
+					"https://www.wikidata.org/wiki/Property:P161 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q33999"
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"Homegrown_film actedin Billy_Bob_Thornton",
+					"actedin https://www.w3.org/2000/01/rdf-schema#domain wordnet_actor_109765278",
+					"actedin https://www.w3.org/2000/01/rdf-schema#range wordnet_movie_106613686",
+				]
+			}
+		]
+	},
+	{
+		"name": "film-druntime-duration",
+		"diffCats": [1,2,3], // not catd
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: fluidops.com",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/Work/runtime 115.0",
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/runtime 6900",
+				]
+			},
+			{
+				"dbName": "Namespace: DBPedia | Database: OpenLinkSW.com",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/Work/runtime 115.0^^http://dbpedia.org/datatype/minute",
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/Work/runtime 6900.0^^http://dbpedia.org/datatype/second",
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/runtime 6900",
+					"http://dbpedia.org/ontology/Work/runtime https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Work",
+					"http://dbpedia.org/ontology/Work/runtime https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/datatype/minute",
+					"http://dbpedia.org/ontology/runtime https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Work",
+					"http://dbpedia.org/ontology/runtime https://www.w3.org/2000/01/rdf-schema#range http://www.w3.org/2001/XMLSchema#double",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase->Freebase/DBPedia | Database: FactForge.net",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.runtime http://rdf.freebase.com/ns/m.03ky_f1",
+					"http://rdf.freebase.com/ns/m.03ky_f1 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/film.film_cut",
+					"http://rdf.freebase.com/ns/m.03ky_f1 http://rdf.freebase.com/ns/film.film_cut.film http://dbpedia.org/resource/Homegrown_(film)",
+					"http://rdf.freebase.com/ns/m.03ky_f1 http://rdf.freebase.com/ns/film.film_cut.runtime 115.0",
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.runtime http://rdf.freebase.com/ns/m.021_gc4",
+					"http://rdf.freebase.com/ns/m.021_gc4 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/film.film_cut",
+					"http://rdf.freebase.com/ns/m.021_gc4 http://rdf.freebase.com/ns/film.film_cut.film http://dbpedia.org/resource/Homegrown_(film)",
+					"http://rdf.freebase.com/ns/m.021_gc4 http://rdf.freebase.com/ns/film.film_cut.runtime 102.0",
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.runtime http://rdf.freebase.com/ns/m.0glb1s4",
+					"http://rdf.freebase.com/ns/m.0glb1s4 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/film.film_cut",
+					"http://rdf.freebase.com/ns/m.0glb1s4 http://rdf.freebase.com/ns/film.film_cut.film http://dbpedia.org/resource/Homegrown_(film)",
+					"http://rdf.freebase.com/ns/m.0glb1s4 http://rdf.freebase.com/ns/film.film_cut.runtime 101.0",
+				]
+			},
+			{
+				"dbName": "Namespace: Linked Movie Database | Database: LMDB.org (Linked Movie Database)",
+				"triples": [
+					"http://data.linkedmdb.org/page/film/17746 http://data.linkedmdb.org/resource/movie/runtime 115",
+				]
+			},
+			{
+				"dbName": "Namespace: Wikidata | Database: Wikidata.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P2047 98minute",
+					"https://www.wikidata.org/wiki/Property:P2047 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
+					"https://www.wikidata.org/wiki/Property:P2047 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18668171",
+					"https://www.wikidata.org/wiki/Property:P2047 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q21077852",
+					"https://www.wikidata.org/wiki/Q18618644 https://www.wikidata.org/wiki/Property:P1568 https://www.wikidata.org/wiki/Q386724",
+					"https://www.wikidata.org/wiki/Q18618644 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q21886162",
+					"https://www.wikidata.org/wiki/Q18618644 https://www.wikidata.org/wiki/Property:P2876 https://www.wikidata.org/wiki/Q1790144",
+				]
+			}
+		]
+	},
+	{
+		"name": "film-release_date-date",
+		"diffCats": [1,2,3],
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: FactForge.org",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/released 1998-04-17(xsd:date)",
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/releaseDate 1998-04-17(xsd:date)"
+				]
+			},
+			{
+				"dbName": "Namespace: DBPedia->Freebase | Database: FactForge.org",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/released 1998-04-17(xsd:date)",
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/releaseDate 1998-04-17(xsd:date)",
+					"http://dbpedia.org/resource/Homegrown_(film) http://rdf.freebase.com/ns/film.film.initial_release_date 1998-04-17",
+					"http://dbpedia.org/resource/Homegrown_(film) http://rdf.freebase.com/ns/film.film.release_date_s http://rdf.freebase.com/ns/m.0j57726",
+					"http://rdf.freebase.com/ns/m.0j57726 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/film.film_regional_release_date",
+					"http://rdf.freebase.com/ns/m.0j57726 http://rdf.freebase.com/ns/film.film_regional_release_date.release_date 1998-09-01",
+					"http://rdf.freebase.com/ns/m.0j57726 http://rdf.freebase.com/ns/film.film_regional_release_date.film http://dbpedia.org/resource/Homegrown_(film)",
+					"http://rdf.freebase.com/ns/m.0j57726 http://rdf.freebase.com/ns/film.film_regional_release_date.film_release_distribution_medium http://dbpedia.org/resource/DVD",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase | Database: FactForge.org",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02r53vq http://dbpedia.org/property/released 1998-04-17(xsd:date)",
+					"http://rdf.freebase.com/ns/m.02r53vq http://dbpedia.org/ontology/releaseDate 1998-04-17(xsd:date)",
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.initial_release_date 1998-04-17",
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.release_date_s http://rdf.freebase.com/ns/m.0j57726",
+				]
+			},
+			{
+				"dbName": "Namespace: LMDB | Database: http://data.linkedmdb.org/",
+				"triples": [
+					"http://data.linkedmdb.org/resource/film/17746 http://data.linkedmdb.org/resource/movie/initial_release_date 1998-04-17",
+				]
+			},
+			{
+				"dbName": "Namespace: WikiData | Database: Wikidata.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P577 1998",
+					"https://www.wikidata.org/wiki/Property:P577 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
+					"https://www.wikidata.org/wiki/Q18618644 https://www.wikidata.org/wiki/Property:P1568 https://www.wikidata.org/wiki/Q386724",
+					"https://www.wikidata.org/wiki/Property:P577 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18636219",
+					"https://www.wikidata.org/wiki/Property:P577 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q1361758"
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"Homegrown_(film) wasCreatedOnDate 1998-04-17^^xsd:date",
+					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#domain https://www.w3.org/2002/07/owl#Thing",
+					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#range xsd:date",
+					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#subPropertyOf startsExistingOnDate",
+				]
+			},
+		]
+	},
+	{
+		"name": "film-locatedIn-place",
+		"diffCats": [1,2,3],
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org+iwb.fluidops.com",
+				"triples": [
+					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/country United_States(en)",
+					"http://dbpedia.org/resource/Homegrown_(film) https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Country",
+					"http://dbpedia.org/ontology/Country https://www.w3.org/2000/01/rdf-schema#subClassOf http://dbpedia.org/ontology/PopulatedPlace",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase | Database: FactForge.org",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.country http://dbpedia.org/resource/United_States",
+				]
+			},
+			{
+				"dbName": "Namespace: WikiData | Database: Wikidata.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P495 https://www.wikidata.org/wiki/Q30",
+					"https://www.wikidata.org/wiki/Property:P495 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Q6256",
+					"https://www.wikidata.org/wiki/Property:P495 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q6256",
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"Homegrown_(film) isLocatedIn United_States",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#domain yagoPermanentlyLocatedEntity",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#range yagoGeoEntity",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#subPropertyOf placedIn"
+				]
+			},
+		]
+	},
+	{
+		"name": "restaurant-homepage-website",
+		"diffCats": [1,2,3],
+		"description": "some description of the difference highlighted by this example",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://xmlns.com/foaf/0.1/homepage in-n-out.com",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase | Database: Factforge.com",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02bb8z http://xmlns.com/foaf/0.1/homepage in-n-out.com",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.official_website in-n-out.com",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.topical_webpage in-n-out.com",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.webpage http://rdf.freebase.com/ns/m.0chn0_k",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.webpage http://rdf.freebase.com/ns/m.01xx006",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.webpage http://rdf.freebase.com/ns/m.0gz3576",
+					"http://rdf.freebase.com/ns/m.0chn0_k http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/common.webpage",
+					"http://rdf.freebase.com/ns/m.0chn0_k http://rdf.freebase.com/ns/common.webpage.resource http://rdf.freebase.com/ns/m.0chn0_b",
+					"http://rdf.freebase.com/ns/m.0chn0_b http://rdf.freebase.com/ns/type.object.name In-N-Out_Burger_Reviews@en",
+					"http://rdf.freebase.com/ns/m.01xx006 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/common.webpage",
+					"http://rdf.freebase.com/ns/m.01xx006 http://rdf.freebase.com/ns/common.webpage.uri in-n-out.com",
+					"http://rdf.freebase.com/ns/m.01xx006 http://rdf.freebase.com/ns/common.resource http://rdf.freebase.com/ns/m.0bjg1mf",
+					"http://rdf.freebase.com/ns/m.0bjg1mf http://rdf.freebase.com/ns/common.resource.annotations http://rdf.freebase.com/ns/m.04mjktx",
+					"http://rdf.freebase.com/ns/m.04mjktx http://rdf.freebase.com/ns/common.webpage.uri in-n-out.com",
+					"http://rdf.freebase.com/ns/m.0gz3576 http://rdf.freebase.com/ns/common.webpage.uri in-n-out.com"
+				]
+			},
+			{
+				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"triples": [
+						"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P856 www.in-n-out.com",
+						"https://www.wikidata.org/wiki/Property:P856 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
+						"https://www.wikidata.org/wiki/Property:P856 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
+						"https://www.wikidata.org/wiki/Q18618644 https://www.wikidata.org/wiki/Property:P1568 https://www.wikidata.org/wiki/Q386724",
+						"https://www.wikidata.org/wiki/Property:P856 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
+					],
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+						"In-N-Out_Burger hasWebsite in-n-out.com",
+						"hasWebsite https://www.w3.org/2000/01/rdf-schema#domain yagoLegalActorGeo",
+						"hasWebsite https://www.w3.org/2000/01/rdf-schema#range yagoURL",
+					],
+			}
+		]
+	},
+	{
+		"name": "restaurant-hasLeader-person",
+		"diffCats": [1,2,3],
+		"description": "highlights how two different entities differ by label but are actually the same real world object",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/keyPerson http://dbpedia.org/resource/Lynsi_Snyder",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/keyPeople http://dbpedia.org/resource/Lynsi_Snyder",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/keyPeople MarkTaylor(en)",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/keyPeople RogerKotch(en)",
+					"http://dbpedia.org/ontology/keyPerson https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/Person",
+					"http://dbpedia.org/ontology/keyPerson https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Person",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase->dbpedia/freebase | Database: factforge.com",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02bb8z http://dbpedia.org/ontology/keyPeople http://dbpedia.org/resource/Lynsi_Snyder",
+					"http://rdf.freebase.com/ns/m.02bb8z http://dbpedia.org/ontology/keyPeople MarkTaylor(en)",
+					"http://rdf.freebase.com/ns/m.02bb8z http://dbpedia.org/ontology/keyPeople RogerKotch(en)",
+					"http://rdf.freebase.com/ns/m.02bb8z http://dbpedia.org/ontology/keyPerson http://dbpedia.org/resource/Lynsi_Snyder"
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase->Framebase/Freebase | Database: openlinksw.com",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02bb8z http://framebase.org/ns/dereif-Leadership-isLedByLeader http://rdf.freebase.com/ns/m.043s6dz",
+				]
+			},
+		]
+	},
+	{
+		"name": "restaurant-createdOn-date",
+		"diffCats": [1,2,3],
+		"description": "highlights how two different entities differ by label but are actually the same real world object",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: dbpedia/openlinksw.com",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/foundingYear 1946(xsd:gYear)",
+					"http://dbpedia.org/ontology/foundingYear https://www.w3.org/2000/01/rdf-schema#range xsd:gYear",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://purl.org/dc/elements/1.1/subject http://dbpedia.org/resource/Category:Restaurants_established_in_1948",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase | Database: Factforge.net",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02bb8z http://www.ontotext.com/proton/protontop#establishmentDate 1948",
+					"http://rdf.freebase.com/ns/m.02bb8z https://www.w3.org/2000/01/rdf-schema#domain http://www.ontotext.com/proton/protontop#Organization",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/organization.organization.date_founded 1948",
+					"http://rdf.freebase.com/ns/organization.organization.date_founded https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protontop#establishmentDate",
+				]
+			},
+			{
+				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P571 1948",
+					"https://www.wikidata.org/wiki/Property:P571 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
+					"https://www.wikidata.org/wiki/Property:P571 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18636219",
+				]
+			},
+			{
+				"dbName": "Namespace: Yago->framebase | Database: OpenLinkSW.com",
+				"triples": [
+					"http://yago-knowledge.org/resource/In-N-Out_Burger http://framebase.org/ns/dereif-Creating-isCreatedAtTime 1948-##-##",
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"In-N-Out_Burger wasCreatedOnDate 1948-##-##^^xsd:date",
+					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#domain https://www.w3.org/2002/07/owl#Thing",
+					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#range xsd:date",
+					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#subPropertyOf startsExistingOnDate",
+				]
+			},
+		]
+	},
 	{
 		"name": "Aircraft-First flight-date",
 		"diffCats": [2,3],
@@ -16,8 +415,7 @@ var differences =
 			{
 				"dbName": "Namespace: DBPedia | Database: Factforge.net & DBPedia.org",
 				"triples": [
-					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://dbpedia.org/property/firstFlight 1947-11-02(xsd:date)",
-					"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://dbpedia.org/property/firstFlight 1947-11-02(xsd:date)" //"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
 				]
 			},
 			{

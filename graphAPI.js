@@ -201,6 +201,17 @@ function spawnGraphs(difference){
             newd3cola.linkDistance(slideEvt.value);
             newd3cola.start();
         });
+
+        var tripleBox = $('<div class="tripleBox"></div>');
+        curVal.triples.forEach(function(curTriple, idx, arr){
+            tripleBox.append("&lt;"+curTriple.replace(/\s/g,"&gt; &lt;")+"&gt;").append(' .<br>');
+        });
+
+        var tripleBtn = $('<div class="tripleBtn">Show triples</div>');
+        tripleBtn.click(function(evt){
+            tripleBox.toggle();
+        });
+        $(newDiv).append(tripleBox).append(tripleBtn);
     })
 }
 
