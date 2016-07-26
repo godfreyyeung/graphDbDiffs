@@ -363,7 +363,7 @@ var differences =
 	{
 		"name": "restaurant-createdOn-date",
 		"diffCats": [1,2,3],
-		"description": "highlights how two different entities differ by label but are actually the same real world object",
+		"description": "",
 		"databases": [
 			{
 				"dbName": "Namespace: DBPedia | Database: dbpedia/openlinksw.com",
@@ -403,6 +403,120 @@ var differences =
 					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#domain https://www.w3.org/2002/07/owl#Thing",
 					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#range xsd:date",
 					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#subPropertyOf startsExistingOnDate",
+				]
+			},
+		]
+	},
+	{
+		"name": "restaurant-locatedIn-location",
+		"diffCats": [1,2,3],
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/locationCity http://dbpedia.org/resource/Irvine,_California",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/locationCity http://dbpedia.org/resource/Irvine,_California",
+					"http://dbpedia.org/ontology/locationCity https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Organisation",
+					"http://dbpedia.org/ontology/locationCity https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/City",
+					"http://dbpedia.org/ontology/locationCity https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://dbpedia.org/ontology/location",
+					"http://dbpedia.org/ontology/locationCity https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase | Database: Factforge.net",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02bb8z http://www.ontotext.com/proton/protontop#locatedIn 'Irvine,California,U.S.@en'",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/organization.organization.headquarters http://rdf.freebase.com/ns/m.040s072",
+					"http://www.ontotext.com/proton/protontop#locatedIn https://www.w3.org/2000/01/rdf-schema#domain http://www.ontotext.com/proton/protontop#Entity",
+					"http://www.ontotext.com/proton/protontop#locatedIn https://www.w3.org/2000/01/rdf-schema#range http://www.ontotext.com/proton/protontop#Location",
+				]
+			},
+			{
+				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P159 https://www.wikidata.org/wiki/Q49219",
+					"https://www.wikidata.org/wiki/Property:P159 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P276",
+					"https://www.wikidata.org/wiki/Property:P159 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
+					"https://www.wikidata.org/wiki/Property:P159 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q7540126",
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"In-N-Out_Burger isLocatedIn Irvine,_California",
+					"In-N-Out_Burger isLocatedIn Irvine",
+					"In-N-Out_Burger isLocatedIn California",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#domain yagoPermanentlyLocatedEntity",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#range yagoGeoEntity",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#type owl:TransitiveProperty",
+					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#subPropertyOf placedIn",
+				]
+			},
+		]
+	},
+	{
+		"name": "restaurant-creationPlace-date",
+		"diffCats": [1,2,3],
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/foundationPlace http://dbpedia.org/resource/Baldwin_Park,_California",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/foundation http://dbpedia.org/resource/Baldwin_Park,_California",
+					"http://dbpedia.org/ontology/foundationPlace https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Organisation",
+					"http://dbpedia.org/ontology/foundationPlace https://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/City",
+				]
+			},
+			{
+				"dbName": "Namespace: Freebase | Database: Factforge.net",
+				"triples": [
+					"http://rdf.freebase.com/ns/m.02bb8z http://www.ontotext.com/proton/protontop#establishedIn http://dbpedia.org/resource/Baldwin_Park,_California",
+					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/organization.organization.place_founded http://dbpedia.org/resource/Baldwin_Park,_California",
+					"http://www.ontotext.com/proton/protontop#establishedIn https://www.w3.org/2000/01/rdf-schema#domain http://www.ontotext.com/proton/protontop#Organization",
+					"http://www.ontotext.com/proton/protontop#establishedIn https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protontop#locatedIn",
+				]
+			},
+			{
+				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"triples": [
+					"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P740 https://www.wikidata.org/wiki/Q804878",
+					"https://www.wikidata.org/wiki/Property:P740 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
+					"https://www.wikidata.org/wiki/Property:P740 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18635217"
+				]
+			},
+		]
+	},
+		{
+		"name": "restaurant-revenue-amount",
+		"diffCats": [1,2,3],
+		"description": "",
+		"databases": [
+			{
+				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/revenue 5.75E8",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/revenue 5.75E8",
+					"http://dbpedia.org/property/revenue https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Organisation",
+					"http://dbpedia.org/property/revenue https://www.w3.org/2000/01/rdf-schema#range xsd:double"
+				]
+			},
+			{
+				"dbName": "Namespace: DBPedia | Database: Factforge.com",
+				"triples": [
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/revenue EstimatedUS$465million@en",
+					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/revenue 4.65E8(xsd:usDollar)",
+					"http://dbpedia.org/property/revenue https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Organisation",
+					"http://dbpedia.org/property/revenue https://www.w3.org/2000/01/rdf-schema#range xsd:double"
+				]
+			},
+			{
+				"dbName": "Namespace: Yago | Database: Max Planck",
+				"triples": [
+					"In-N-Out_Burger hasRevenue 625000000^^dollar",
+					"hasRevenue https://www.w3.org/2000/01/rdf-schema#domain yagoLegalActorGeo",
+					"hasRevenue https://www.w3.org/2000/01/rdf-schema#range yagoMonetaryVAlue"
 				]
 			},
 		]
