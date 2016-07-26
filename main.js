@@ -54,5 +54,16 @@ function loadExampleList(differenceArr, filterArr){
 	});
 }
 
-
 loadExampleList(differences, activeCategories);
+
+$('.nav-btn').click(function(evt){
+	$('.active').toggleClass('active', false);
+	$(evt.target).toggleClass('active', true);
+	$('.view').toggle(false);
+	var viewId="#"+evt.target.id+"-view";
+	$(viewId).toggle(true);
+})
+
+$('#category-view button').click(function(){
+	categoriesNav.toggle();
+})

@@ -10,25 +10,45 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="bootstrap-slider/bootstrap-slider.css">
         <title>Alignment constraints with guidelines</title>
-        <style>
-
-        </style>
     </head>
     <body>
         <div class="container">
             <div class="row">
+                <div id="categories">
+                </div>
                 <div class="sidebar col-sm-2">
-                    <h2>Graph DB Statement Visualizer</h2>
-                    <div id="categories">
-                    </div>
-                    <div id="examples">
-                    </div>
-                    Blue nodes are subjects and objects. <br>
-                    Orange nodes are predicates. <br>
-                    Thus a triple consists of a blue, orange and another blue node chained together in order. <br>
-                    Statements about labels excluded. <br>
-                    NS = Namespace<br>
-                    DB = Database
+                    <section class="apptitle">
+                        <h5>Graph DB Statement Visualizer</h3>
+                    </section>
+                    <section class="nav">
+                        <div id="category" class="nav-btn active">
+                            Examples
+                        </div>
+                        <div id="instruction" class="nav-btn">
+                            Instructions
+                        </div>
+                        <div id="description" class="nav-btn">
+                            Description
+                        </div>
+                    </section>
+                    <section class="sidebar-content">
+                        <section id="category-view" class="view">
+                            <button>Filter by Categories &gt;&gt;</button>
+                            <div id="examples">
+                            </div>
+                        </section>
+                        <section id="instruction-view" class="view" style="display:none">
+                            Blue nodes are subjects and objects. <br>
+                            Orange nodes are predicates. <br>
+                            Thus a triple consists of a blue, orange and another blue node chained together in order. <br>
+                            Statements about labels excluded. <br>
+                            NS = Namespace<br>
+                            DB = Database
+                        </section>
+                        <section id="description-view" class="view" style="display:none">
+                            No example selected yet.
+                        </section>
+                    </section>
                 </div>
                 <div class="svgArea col-sm-10 nopadding">
                     <row class="container nopadding" id="dbExamples">
