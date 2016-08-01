@@ -15,6 +15,309 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
         <div class="container">
             <div class="row">
                 <div id="categories">
+                <h4>Filter Examples by Difference Category</h4>
+                Examples appearing on the left are associated with <i>all</i> checked categories.
+                    <ol>
+                        <li>
+                            Structural
+                            <ol type="a">
+                                <li>Different Triple/Nodes
+                                    <ol type="i">
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="1" />
+                                            Different Predicate
+                                        </li>
+                                        <li>Different Object
+                                            <ol type="1">
+                                                <li>
+                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="2" />
+                                                    Different Entity
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="3" />
+                                                    Different Value
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="4" />
+                                                    Single Entity vs  Value
+                                                </li>
+                                                <li>
+                                                    Embedded Object
+                                                    <ol type="a">
+                                                        <li>
+                                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="5" />
+                                                            Value
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="6" />
+                                                            Object
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="7" />
+                                                    Multipart Object
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="8" />
+                                            Both Predicate and Object are Different
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Extended Statement
+                                    <ol type="i">
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="9" />
+                                            General case
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="10" />
+                                            Added Expressivity
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="11" />
+                                            Encapsulated Object
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Value
+                            <ol type="a">
+                                <li type="a">
+                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="12" />
+                                    Unit of Measure attached to different nodes
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Meta
+                            <ol type="a">
+                                <li>
+                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="13" />
+                                    Claim inferrable from another claim
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="14" />
+                                    Multiple different statements make the same claim
+                                </li>
+                                <li>
+                                    Different view of the world
+                                    <ol type="i">
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="15" />
+                                            Nuance expressed with additional statements
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="16" />
+                                            Predicate considered an Object, or vice versa
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="17" />
+                                            Different idea of entity
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <h4>Difference Category Descriptions</h4>
+                    Unless otherwise stated, the following difference descriptions refer to differences of a given claim
+                    between one or more databases.
+                    <ol>
+                        <li>
+                            <dl>
+                                <dt>Structural</dt>
+                                <dd>Differences related to node and link placement.</dd>
+                            </dl>
+                            <ol type="a">
+                                <li>
+                                    <dl>
+                                        <dt>Different Triple/Nodes</dt>
+                                        <dd>The triple statements themselves use one or more different entities or values.</dd>
+                                    </dl>
+                                    <ol type="i">
+                                        <li>
+                                            <dl>
+                                                <dt>Different Predicate</dt>
+                                                <dd>The predicate node is a different entity.</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Different Object</dt>
+                                                <dd>The object node is a different entity or value.</dd>
+                                            </dl>
+                                            <ol type="1">
+                                                <li>
+                                                    <dl>
+                                                        <dt>Different Entity</dt>
+                                                        <dd>The object node is a different entity.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>Different Value</dt>
+                                                        <dd>The object node is a different literal, i.e. a different string or number.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>Single Entity vs Value</dt>
+                                                        <dd>The object is an entity in one DB, and a value in another.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>Embedded Object</dt>
+                                                        <dd>
+                                                            In one DB a statement's object only consists of one focused, single entity or value.
+                                                            In another DB that that object consists of multiple additional entities or values embedded
+                                                            alongside the one entity or value.
+                                                        </dd>
+                                                    </dl>
+                                                    <ol type="a">
+                                                        <li>
+                                                            <dl>
+                                                                <dt>Value</dt>
+                                                                <dd>
+                                                                    In one DB, a statement's object is a single value, and in another
+                                                                    that single value is embedded into part of a larger value.
+                                                                </dd>
+                                                            </dl>
+                                                        </li>
+                                                        <li>
+                                                            <dl>
+                                                                <dt>Object</dt>
+                                                                <dd>
+                                                                    In one DB, astatement's object is a single entity, and in another
+                                                                    that entity conceptually represents multiple other resources.
+                                                                </dd>
+                                                            </dl>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>Multipart Object</dt>
+                                                        <dd>
+                                                            In one DB, a statement's object is an entity which has conceptually only one part to it.
+                                                            In another DB, that entity is conceptually comprised of multiple parts, and this is
+                                                            reflected by its parts being broken up across multiple statements.
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Both Predicate and Object are Different</dt>
+                                                <dd>The given example exhibits both differences 1ai and 1aii.</dd>
+                                            </dl>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>Extended Statement</dt>
+                                        <dd>
+                                            Compared to a given statement forming a claim in one database,
+                                            a statement forming the same claim in another database has additional intermediate statements before or after the predicate
+                                            of the given claim.
+                                        </dd>
+                                    </dl>
+                                    <ol type="i">
+                                        <li>
+                                            <dl>
+                                                <dt>General case</dt>
+                                                <dd>The general case assumes the subject, predicate and object are the equivalent across the compared DBs.</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Added Expressivity</dt>
+                                                <dd>The additional intermediate statements add expressiveness to the claim.</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Encapsulated Object</dt>
+                                                <dd>The additional intermediate statements encapsulates the original object, which may be either an entity or a value, without adding any expressivity to the claim. The new intermediate entity may only exist to represent the original entity at a higher level, holding the original entity as a property.</dd>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>Value</dt>
+                                <dd>Differences regarding values.
+                            </dl>
+                            <ol type="a">
+                                <li type="a">
+                                    <dl>
+                                        <dt>Unit of Measure attached to different nodes</dt>
+                                        <dd>For example, the currency unit is attached to the predicate in one DB, while to the object in another DB.
+                                    </dl>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>Meta</dt>
+                                <dd>Differences stem from conceptual differences between databases, such as how they view the world.</dd>
+                            </dl>
+                            <ol type="a">
+                                <li>
+                                    <dl>
+                                        <dt>Claim inferrable from another claim</dt>
+                                        <dd>
+                                            Within one database, a given claim can be implied or inferred from statements meant to make another claim.
+                                            That database may or may not have statements explicitly forming the given claim.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>Multiple different statements make the same claim</dt>
+                                        <dd>
+                                            Within one database there are multiple statements explicitly forming the same claim.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    Different view of the world
+                                    <ol type="i">
+                                        <li>
+                                            <dl>
+                                                <dt>Nuance expressed with additional statements</dt>
+                                                <dd>Nuanced view is created using additional statements, which are not necessarily “extended statements”</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Predicate considered an Object, or vice versa</dt>
+                                                <dd>An entity is used as a predicate in one DB but as an object in another.</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Different idea of entity</dt>
+                                                <dd>
+                                                    Given equivalent entities across databases (e.g. perhaps linked using owl:sameAs)
+                                                    different databases may still have different ideas on what that entity inherently means or how it should be used.
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
                 </div>
                 <div class="sidebar col-sm-2">
                     <section class="apptitle">
@@ -28,12 +331,12 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             Instructions
                         </div>
                         <div id="description" class="nav-btn">
-                            Description
+                            Example Description
                         </div>
                     </section>
                     <section class="sidebar-content">
                         <section id="category-view" class="view">
-                            <button>Filter by Categories &gt;&gt;</button>
+                            <button>View Categories</button>
                             <div id="examples">
                             </div>
                         </section>
@@ -43,7 +346,8 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             Thus a triple consists of a blue, orange and another blue node chained together in order. <br>
                             Statements about labels excluded. <br>
                             NS = Namespace<br>
-                            DB = Database
+                            DB = Database<br>
+                            Objects in single quotes, for example &#39;$342&#39;, represent literals.
                         </section>
                         <section id="description-view" class="view" style="display:none">
                             No example selected yet.

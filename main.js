@@ -15,25 +15,46 @@ function setForceSize(parentDomNode, svgElement, colaObj){
 var categoriesNav = $("#categories");
 var exampleNav = $("#examples");
 
-var categories = [1,2,3];
+// "perhaps in the future, ids will be strings representing the categorization hierarchy. e.g. 1bi or 1biii"
+// var categories = [
+// 		{
+// 			{
+// 				s
+// 			}
+// 		}
+// 		{
+// 			id: 1,
+// 			label:"1ai) Different Predicate"
+// 		},
+// 		{
+// 			id:2,
+// 			label: " Different Object > Different Entity"
+// 		},
+// 		{
+// 			id:3,
+// 			label: "Different Object"
+// 		},
+// 	];
 var activeCategories = [];
 
 function checkboxClicked(){
-	if(this.checked){
-		activeCategories.push(Number(this.value));
+	var inputElem = event.target;
+	if(inputElem.checked){
+		activeCategories.push(Number(inputElem.value));
 	} else {
-		activeCategories.splice(activeCategories.indexOf(this.value), 1);
+		console.log(inputElem.value + " what " + activeCategories.indexOf(Number(inputElem.value)));
+		activeCategories.splice(activeCategories.indexOf(Number(inputElem.value)), 1);
 	}
 	loadExampleList(differences, activeCategories);
 }
 
-categories.forEach(function(curVal, idx, arr){
-	var newCheckbox = $('<input type="checkbox" name="cat" value="'+curVal+'" />');
-	newCheckbox.click(checkboxClicked); // can't use .onchange here because newCheckbox is jquery obj
-	var labeledCheckbox = $('<label>'+curVal+'</label>');
-	labeledCheckbox.append(newCheckbox).append('&nbsp;');
-	categoriesNav.append(labeledCheckbox);
-});
+// categories.forEach(function(curVal, idx, arr){
+// 	var newCheckbox = $('<input type="checkbox" name="cat" value="'+curVal+'" />');
+// 	newCheckbox.click(checkboxClicked); // can't use .onchange here because newCheckbox is jquery obj
+// 	var labeledCheckbox = $('<label>'+curVal+'</label>');
+// 	labeledCheckbox.append(newCheckbox).append('&nbsp;');
+// 	categoriesNav.append(labeledCheckbox);
+// });
 
 
 function loadExampleList(differenceArr, filterArr){
