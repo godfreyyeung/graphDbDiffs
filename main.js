@@ -14,48 +14,20 @@ function setForceSize(parentDomNode, svgElement, colaObj){
 
 var categoriesNav = $("#categories");
 var exampleNav = $("#examples");
+var description = $("#description-view");
+var descriptionText = $("#description-text");
 
-// "perhaps in the future, ids will be strings representing the categorization hierarchy. e.g. 1bi or 1biii"
-// var categories = [
-// 		{
-// 			{
-// 				s
-// 			}
-// 		}
-// 		{
-// 			id: 1,
-// 			label:"1ai) Different Predicate"
-// 		},
-// 		{
-// 			id:2,
-// 			label: " Different Object > Different Entity"
-// 		},
-// 		{
-// 			id:3,
-// 			label: "Different Object"
-// 		},
-// 	];
 var activeCategories = [];
 
-function checkboxClicked(){
+function checkboxClicked(event){
 	var inputElem = event.target;
 	if(inputElem.checked){
 		activeCategories.push(Number(inputElem.value));
 	} else {
-		console.log(inputElem.value + " what " + activeCategories.indexOf(Number(inputElem.value)));
 		activeCategories.splice(activeCategories.indexOf(Number(inputElem.value)), 1);
 	}
 	loadExampleList(differences, activeCategories);
 }
-
-// categories.forEach(function(curVal, idx, arr){
-// 	var newCheckbox = $('<input type="checkbox" name="cat" value="'+curVal+'" />');
-// 	newCheckbox.click(checkboxClicked); // can't use .onchange here because newCheckbox is jquery obj
-// 	var labeledCheckbox = $('<label>'+curVal+'</label>');
-// 	labeledCheckbox.append(newCheckbox).append('&nbsp;');
-// 	categoriesNav.append(labeledCheckbox);
-// });
-
 
 function loadExampleList(differenceArr, filterArr){
 	var displayArr = differenceArr.filter(function(diffElem, idx, arr){
@@ -67,9 +39,21 @@ function loadExampleList(differenceArr, filterArr){
 	displayArr.forEach(function(curVal, idx, arr){
     	var difference = curVal;
     	var newBtn = $('<div class="exampleBtn">'+difference.name+'</div>');
+
     	newBtn.click(function(evt){
+    		$(evt.target).toggleClass('selected').siblings().removeClass('selected');
 	        removeGraphs();
+
 	        spawnGraphsAdapter(difference);
+	        $("#description-view li").each(function(){
+	        	if(curVal.diffCats.indexOf(Number(this.dataset.value)) > 0){
+	        		$(this).toggleClass('activeCat', true);
+	        		$(this).parents("li, ol").toggleClass('activeCat', true);
+	        	} else {
+	        		$(this).toggleClass('activeCat', false);
+	        	}
+	        });
+	        descriptionText.html(difference.description);
 	    })
 	    exampleNav.append(newBtn);
 	});

@@ -24,44 +24,44 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                 <li>Different Triple/Nodes
                                     <ol type="i">
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="1" />
+                                            <input type="checkbox" name="Different Predicate" onchange="checkboxClicked(event)" value="1" />
                                             Different Predicate
                                         </li>
                                         <li>Different Object
                                             <ol type="1">
                                                 <li>
-                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="2" />
+                                                    <input type="checkbox" name="Different Entity" onchange="checkboxClicked(event)" value="2" />
                                                     Different Entity
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="3" />
+                                                    <input type="checkbox" name="Different Value" onchange="checkboxClicked(event)" value="3" />
                                                     Different Value
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="4" />
+                                                    <input type="checkbox" name="Single Entity vs  Value" onchange="checkboxClicked(event)" value="4" />
                                                     Single Entity vs  Value
                                                 </li>
                                                 <li>
                                                     Embedded Object
                                                     <ol type="a">
                                                         <li>
-                                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="5" />
+                                                            <input type="checkbox" name="Value" onchange="checkboxClicked(event)" value="5" />
                                                             Value
                                                         </li>
                                                         <li>
-                                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="6" />
+                                                            <input type="checkbox" name="Object" onchange="checkboxClicked(event)" value="6" />
                                                             Object
                                                         </li>
                                                     </ol>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="7" />
+                                                    <input type="checkbox" name="Multipart Object" onchange="checkboxClicked(event)" value="7" />
                                                     Multipart Object
                                                 </li>
                                             </ol>
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="8" />
+                                            <input type="checkbox" name="Both Predicate and Object are Different" onchange="checkboxClicked(event)" value="8" />
                                             Both Predicate and Object are Different
                                         </li>
                                     </ol>
@@ -70,15 +70,15 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                     Extended Statement
                                     <ol type="i">
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="9" />
+                                            <input type="checkbox" name="General case" onchange="checkboxClicked(event)" value="9" />
                                             General case
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="10" />
+                                            <input type="checkbox" name="Added Expressivity" onchange="checkboxClicked(event)" value="10" />
                                             Added Expressivity
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="11" />
+                                            <input type="checkbox" name="Encapsulated Object" onchange="checkboxClicked(event)" value="11" />
                                             Encapsulated Object
                                         </li>
                                     </ol>
@@ -89,7 +89,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             Value
                             <ol type="a">
                                 <li type="a">
-                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="12" />
+                                    <input type="checkbox" name="Unit of Measure attached to different nodes" onchange="checkboxClicked(event)" value="12" />
                                     Unit of Measure attached to different nodes
                                 </li>
                             </ol>
@@ -98,26 +98,26 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             Meta
                             <ol type="a">
                                 <li>
-                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="13" />
+                                    <input type="checkbox" name="Claim inferrable from another claim" onchange="checkboxClicked(event)" value="13" />
                                     Claim inferrable from another claim
                                 </li>
                                 <li>
-                                    <input type="checkbox" name="cat" onchange="checkboxClicked()" value="14" />
+                                    <input type="checkbox" name="Multiple different statements make the same claim" onchange="checkboxClicked(event)" value="14" />
                                     Multiple different statements make the same claim
                                 </li>
                                 <li>
                                     Different view of the world
                                     <ol type="i">
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="15" />
+                                            <input type="checkbox" name="Nuance expressed with additional statements" onchange="checkboxClicked(event)" value="15" />
                                             Nuance expressed with additional statements
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="16" />
-                                            Predicate considered an Object, or vice versa
+                                            <input type="checkbox" name="Predicate considered an Object, or vice versa" onchange="checkboxClicked(event)" value="16" />
+                                            Predicate considered an Object (and vice versa)
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="cat" onchange="checkboxClicked()" value="17" />
+                                            <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="17" />
                                             Different idea of entity
                                         </li>
                                     </ol>
@@ -350,7 +350,102 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             Objects in single quotes, for example &#39;$342&#39;, represent literals.
                         </section>
                         <section id="description-view" class="view" style="display:none">
-                            No example selected yet.
+                            <h4>Example's Difference Categories:</h4>
+                            <ol>
+                                <li>
+                                    Structural
+                                    <ol type="a">
+                                        <li>Different Triple/Nodes
+                                            <ol type="i">
+                                                <li data-value="1">
+                                                    Different Predicate
+                                                </li>
+                                                <li>Different Object
+                                                    <ol type="1">
+                                                        <li data-value="2">
+                                                            Different Entity
+                                                        </li>
+                                                        <li data-value="3">
+                                                            Different Value
+                                                        </li>
+                                                        <li data-value="4">
+                                                            Single Entity vs  Value
+                                                        </li>
+                                                        <li>
+                                                            Embedded Object
+                                                            <ol type="a">
+                                                                <li data-value="5">
+                                                                    Value
+                                                                </li>
+                                                                <li data-value="6">
+                                                                    Object
+                                                                </li>
+                                                            </ol>
+                                                        </li>
+                                                        <li data-value="7">
+                                                            Multipart Object
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li data-value="8">
+                                                    Both Predicate and Object are Different
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Extended Statement
+                                            <ol type="i">
+                                                <li data-value="9">
+                                                    General case
+                                                </li>
+                                                <li data-value="10">
+                                                    Added Expressivity
+                                                </li>
+                                                <li data-value="11">
+                                                    Encapsulated Object
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Value
+                                    <ol type="a">
+                                        <li data-value="12">
+                                            Unit of Measure attached to different nodes
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Meta
+                                    <ol type="a">
+                                        <li data-value="13">
+                                            Claim inferrable from another claim
+                                        </li>
+                                        <li data-value="14">
+                                            Multiple different statements make the same claim
+                                        </li>
+                                        <li>
+                                            Different view of the world
+                                            <ol type="i">
+                                                <li data-value="15">
+                                                    Nuance expressed with additional statements
+                                                </li>
+                                                <li data-value="16">
+                                                    Predicate considered an Object (and vice versa)
+                                                </li>
+                                                <li data-value="17">
+                                                    Different idea of entity
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <h4>Example's Description:</h4>
+                            <section id="description-text">
+                                 No example selected yet.
+                            </section>
                         </section>
                     </section>
                 </div>

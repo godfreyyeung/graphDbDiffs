@@ -76,6 +76,20 @@ body {
 .active{
   background-color: rgb(119,136,153) !important;
 }
+.selected {
+  background-color: rgba(153,136,119,0.9) !important;
+}
+#description-view ol {
+  color: #D3D3D3;
+  font-size: 11px;
+}
+#description-text{
+  padding:5px;
+}
+.activeCat{
+  color: white;
+  font-weight: bold;
+}
 .sidebar-content{
   height: 90%;
   width: 100%;
