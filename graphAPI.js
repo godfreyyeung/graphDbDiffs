@@ -190,7 +190,7 @@ function spawnGraphs(difference){
             toggleAvoidOverlaps(newd3cola, overlaps);
         })
 
-        var linkDistSlider = $('<input class="linkDistSlider" type="text" data-slider-min="120" data-slider-max="350" data-slider-step="1" data-slider-value="120"/>');
+        var linkDistSlider = $('<input class="linkDistSlider" type="text" data-slider-min="120" data-slider-max="250" data-slider-step="1" data-slider-value="120"/>');
         $(newDiv).append(overlapBtn).append(linkDistSlider);
         //slider initialization must be called AFTER the slider element is appended to the DOM
         linkDistSlider.slider({
@@ -211,7 +211,17 @@ function spawnGraphs(difference){
         tripleBtn.click(function(evt){
             tripleBox.toggle();
         });
+
         $(newDiv).append(tripleBox).append(tripleBtn);
+
+        if(curVal.hasOwnProperty('imgPath')){
+            var imgBox = $('<div class="imgBox"><a href="img/'+curVal.imgPath+'" target="_blank" ><img src="img/'+curVal.imgPath+'"/></a></div>');
+            var imgBtn = $('<div class="imgBtn">Show Image</div>');
+            imgBtn.click(function(evt){
+                imgBox.toggle();
+            });
+            $(newDiv).append(imgBox).append(imgBtn);
+        }
     })
 }
 

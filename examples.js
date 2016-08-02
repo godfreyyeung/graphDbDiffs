@@ -32,6 +32,7 @@ var differences =
 		"databases": [
 			{
 				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"imgPath": "film-director-person/db-db.png",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/director http://dbpedia.org/resource/Stephen_Gyllenhaal",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/director http://dbpedia.org/resource/Stephen_Gyllenhaal",

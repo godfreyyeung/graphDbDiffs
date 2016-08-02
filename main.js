@@ -45,15 +45,18 @@ function loadExampleList(differenceArr, filterArr){
 	        removeGraphs();
 
 	        spawnGraphsAdapter(difference);
+
 	        $("#description-view li").each(function(){
-	        	if(curVal.diffCats.indexOf(Number(this.dataset.value)) > 0){
+	        	if(curVal.diffCats.indexOf(Number(this.dataset.value)) > -1){
 	        		$(this).toggleClass('activeCat', true);
 	        		$(this).parents("li, ol").toggleClass('activeCat', true);
 	        	} else {
 	        		$(this).toggleClass('activeCat', false);
 	        	}
 	        });
+
 	        descriptionText.html(difference.description);
+
 	    })
 	    exampleNav.append(newBtn);
 	});
