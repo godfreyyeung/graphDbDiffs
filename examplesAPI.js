@@ -97,7 +97,8 @@ function dbExampleToGraph(dbExample, labels){
 	// creates new object each call, since the function's stack is destroyed upon return.
 	// However, each created graph obj is maintained on stack. Thus references towards these objects remain.
 	var graph = {};
-	graph.name = dbExample.dbName;
+	graph.dbName = dbExample.dbName;
+	graph.nsName = dbExample.nsName;
 	graph.nodes = [];
 	graph.links = [];
 	graph.constraints = [];

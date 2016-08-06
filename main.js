@@ -41,7 +41,7 @@ function loadExampleList(differenceArr, filterArr){
     	var newBtn = $('<div class="exampleBtn">'+difference.name+'</div>');
 
     	newBtn.click(function(evt){
-    		$(evt.target).toggleClass('selected').siblings().removeClass('selected');
+    		$(evt.target).toggleClass('selected', true).siblings().removeClass('selected');
 	        removeGraphs();
 
 	        spawnGraphsAdapter(difference);

@@ -98,7 +98,7 @@ var labels = {
 	"http://dbpedia.org/property/location":"location",
 	"Avenida_Suecia,_s/n_(en)": "Avenida_Suecia, s/n ,(en)",
 	"http://dbpedia.org/resource/Valencia": "dbr:Valencia",
-	"http://dbpedia.org/ontoloy/country":"dbo:country",
+	"http://dbpedia.org/ontology/country":"dbo:country",
 	"http://dbpedia.org/resource/Spain":"dbr:Spain",
 	//locatedIn freebase
 	"http://rdf.freebase.com/ns/location.location.containedby": "fb:location. location. containedby",
@@ -227,7 +227,7 @@ var labels = {
 	"http://dbpedia.org/ontology/Work": "dbo:Work",
 	"http://dbpedia.org/ontology/Work/runtime": "dbo:Work/runtime(m)",
 	"http://dbpedia.org/ontology/runtime": "dbo:runtime(s)",
-	"115.0^^http://dbpedia.org/datatype/minute": "115.0^^http:// dbpedia.org/ datatype/minute",
+	"'115.0^^http://dbpedia.org/datatype/minute'": "'115.0^^http:// dbpedia.org/ datatype/minute'",
 	"6900.0^^http://dbpedia.org/datatype/second": "6900.0^^http:// dbpedia.org/ datatype/second",
 	"http://dbpedia.org/datatype/minute": "db:datatype/ minute",
 	"http://dbpedia.org/ontology/releaseDate": "dbo:release date",

@@ -54,7 +54,7 @@ function update(newGraph, colaForce, newSvg){
     graphTitle.setAttributeNS(null, "x", "10");
     graphTitle.setAttributeNS(null, "y", "20");
     graphTitle.setAttributeNS(null, "font-size", "24");
-    var titleText = document.createTextNode(graph.name);
+    var titleText = document.createTextNode("DB: "+graph.dbName+" | NS: "+graph.nsName);
     graphTitle.appendChild(titleText);
     // Todo: fix this hack.
     // apparently the svg parameter passed in is an array of arrays... not the svg elem itself

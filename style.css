@@ -83,6 +83,11 @@ body {
   color: #D3D3D3;
   font-size: 11px;
 }
+
+#description-view > ol, #description-view ol{
+  padding: 0 0 0 16px;
+}
+
 #description-text{
   padding:5px;
 }
@@ -184,6 +189,7 @@ svg {
   padding: 2px;
   background: rgba(0,0,0,0.8);
   display: none;
+  text-align: center;
 }
 .imgBox img{
   max-width: 100%;

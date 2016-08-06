@@ -120,6 +120,10 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                             <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="17" />
                                             Different idea of entity
                                         </li>
+                                        <li>
+                                            <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="18" />
+                                            Different entity label for same resource
+                                        </li>
                                     </ol>
                                 </li>
                             </ol>
@@ -205,9 +209,12 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                     <dl>
                                                         <dt>Multipart Object</dt>
                                                         <dd>
+                                                            One DB represents a resource as a single entity or value, while another DB uses multiple statements to represent that resource as multiple entities or value. This may mean that one DB conceptually represents an entity as having one part, while another DB represents that entity as comprised of multiple parts.
+                                                            <!--
                                                             In one DB, a statement's object is an entity which has conceptually only one part to it.
                                                             In another DB, that entity is conceptually comprised of multiple parts, and this is
                                                             reflected by its parts being broken up across multiple statements.
+                                                            -->
                                                         </dd>
                                                     </dl>
                                                 </li>
@@ -313,6 +320,14 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                 </dd>
                                             </dl>
                                         </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Different entity label for same resource</dt>
+                                                <dd>
+                                                    Different databases may label an entity differently, but the underlying resource of the entities are the same.
+                                                </dd>
+                                            </dl>
+                                        </li>
                                     </ol>
                                 </li>
                             </ol>
@@ -348,8 +363,18 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             NS = Namespace<br>
                             DB = Database<br>
                             Objects in single quotes, for example &#39;$342&#39;, represent literals.
+
+                            untangle -- often drawn in wrong order
+                                use the slider on bottom left to adjust link length.
+                            click to view image
+                            colors represent n-degree statements
+                            click example description to view description of differences highlighted by example
                         </section>
                         <section id="description-view" class="view" style="display:none">
+                            <h4>Example's Description:</h4>
+                            <section id="description-text">
+                                 No example selected yet.
+                            </section>
                             <h4>Example's Difference Categories:</h4>
                             <ol>
                                 <li>
@@ -437,15 +462,14 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                 <li data-value="17">
                                                     Different idea of entity
                                                 </li>
+                                                <li data-value="18">
+                                                    Different entity label for same resource
+                                                </li>
                                             </ol>
                                         </li>
                                     </ol>
                                 </li>
                             </ol>
-                            <h4>Example's Description:</h4>
-                            <section id="description-text">
-                                 No example selected yet.
-                            </section>
                         </section>
                     </section>
                 </div>

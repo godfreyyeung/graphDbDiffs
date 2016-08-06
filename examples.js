@@ -8,12 +8,14 @@
 
 // template for each difference
 {
-		"name": "subjectconcept-predicateconcept-objectconcept",
+		"dbName": "somedatabase.net",
+		"nsName": "subjectNamespace->predicateOrObjectNamespace1/predicateOrObjectNamespace2",
+		"imgPath": "subj-pred-obj/dbName-subjectNamespace-predicateOrObjectNamespace1-.predicateOrObjectNamespace2.png",
 		"diffCats": [1,2,3],
 		"description": "some description of the difference highlighted by this example",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: Factforge.net & DBPedia.org",
+				"nsName": "DBPedia", "dbName": "Factforge.net & DBPedia.org",
 				"triples": [
 					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://dbpedia.org/property/firstFlight 1947-11-02(xsd:date)",
 					"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
@@ -28,11 +30,12 @@ var differences =
 	{
 		"name": "film-director-person",
 		"diffCats": [1,11,14], // not catd
-		"description": "The comparison of DBPedia and Wikidata's statement for the claim highllights an extension+predicate difference.",
+		"description": "DBPedia's dbo:director and dbp:director predicates are an example of difference [3b]. Compared to DBPedia.org and Max Planck Yago statements, WikiData's statements for the domain of the director predicate highllight an extension+predicate difference. Since the equivalency of the director predicates across databases is unclear, all databases exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
-				"imgPath": "film-director-person/db-db.png",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
+				"imgPath": "film-director-person/dbp-dbp.png",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/director http://dbpedia.org/resource/Stephen_Gyllenhaal",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/director http://dbpedia.org/resource/Stephen_Gyllenhaal",
@@ -41,19 +44,22 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase->Freebase/DBPedia | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase->Freebase/DBPedia",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.directed_by http://dbpedia.org/resource/Stephen_Gyllenhaal",
 				]
 			},
 			{
-				"dbName": "Namespace: Linked Movie Database | Database: Linked Movie Database",
+				"dbName": "Linked Movie Database",
+				"nsName": "Linked Movie Database",
 				"triples": [
 					"http://data.linkedmdb.org/page/film/17746 http://data.linkedmdb.org/resource/movie/director http://data.linkedmdb.org/page/director/10534",
 				]
 			},
 			{
-				"dbName": "Namespace: Wikidata | Database: Wikidata.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P57 https://www.wikidata.org/wiki/Q469233",
 					"https://www.wikidata.org/wiki/Property:P57 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
@@ -62,7 +68,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"Homegrown_film directed Stephen_Gyllenhaal",
 					"directed https://www.w3.org/2000/01/rdf-schema#domain wordnet_person_100007846",
@@ -74,10 +81,11 @@ var differences =
 	{
 		"name": "film-has_actor-person",
 		"diffCats": [1,11], // not catd
-		"description": "",
+		"description": "WikiData's method of specifying that the has_actor predicate's domain must be a creative work is potentially an example of [1biii]. Statements involving 'wikidata property about films' and the 'wd:type constraint' entities are inserted between WikiData's has_actor predicate ('cast_member') and 'wd:film'. Whereas only one statement with predicate 'rdfs:domain' is used to specify the domain in DBPedia and Max Planck's Yago claims. Since the equivalency of the has_actor predicates across databases is unclear, all databases exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/starring http://dbpedia.org/resource/Billy_Bob_Thornton",
 					"http://dbpedia.org/ontology/starring https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Work",
@@ -85,19 +93,22 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase->Freebase/DBPedia | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase->Freebase/DBPedia",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02r53vq http://dbpedia.org/property/starring http://dbpedia.org/resource/Billy_Bob_Thornton",
 				]
 			},
 			{
-				"dbName": "Namespace: Linked Movie Database | Database: Linked Movie Database",
+				"dbName": "Linked Movie Database",
+				"nsName": "Linked Movie Database",
 				"triples": [
 					"http://data.linkedmdb.org/resource/film/17746 http://data.linkedmdb.org/resource/movie/performance http://data.linkedmdb.org/resource/actor/29395",
 				]
 			},
 			{
-				"dbName": "Namespace: Wikidata | Database: Wikidata.org",
+				"dbName": "Wikidata",
+				"nsName": "Wikidata.org",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P161 https://www.wikidata.org/wiki/Q202735",
 					"https://www.wikidata.org/wiki/Property:P161 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q22965162",
@@ -108,7 +119,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Yago",
+				"nsName": "Max Planck",
 				"triples": [
 					"Homegrown_film actedin Billy_Bob_Thornton",
 					"actedin https://www.w3.org/2000/01/rdf-schema#domain wordnet_actor_109765278",
@@ -119,18 +131,20 @@ var differences =
 	},
 	{
 		"name": "film-runtime-duration",
-		"diffCats": [1,3,4,9,11,12,14], // not catd
-		"description": "",
+		"diffCats": [1,3,9,10,11,12,14], // not catd. took out #4
+		"description": "Difference [1aii2] is highlighted by the discrepancy between WikiData's runtime value of '98 minute' and Freebase's 115 minutes. Assuming that freebase's runtime predicate is the same as the other runtime predicates, freebase's entities that encapsulate the actual runtime values are examples of difference [1bi] and [1biii]. [1bii] is shown in how WikiData specifies the domain of its runtime predicate (wd-prop:Duration) through its superclass, 'Wikidata property for items about works'. The openlinksw database just attached a statement specifying domain directly onto the duration predicate. Difference category [2] is highlighted by the fact that the value '115' is accompanied by the minute unit in openlinksw.com's dbpedia statements, but not in statements of other databases. Difference [3b] is shown in how DBPedia and freebase have multiple duration predicates, such as 'runtime(s)' and 'runtime(m)'' or 'film_cut.runtime' and 'film.runtime'. Since the equivalency of the runtime predicates across databases is unclear, all databases exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: fluidops.com",
+				"dbName": "fluidops.com",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/Work/runtime '115.0'",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/runtime '6900'",
 				]
 			},
 			{
-				"dbName": "Namespace: DBPedia | Database: OpenLinkSW.com",
+				"dbName": "OpenLinkSW.com",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/Work/runtime '115.0^^http://dbpedia.org/datatype/minute'",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/Work/runtime '6900.0^^http://dbpedia.org/datatype/second'",
@@ -142,7 +156,9 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase->Freebase/DBPedia | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase->Freebase/DBPedia",
+				"imgPath": "film-runtime-duration/fb.png",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.runtime http://rdf.freebase.com/ns/m.03ky_f1",
 					//"http://rdf.freebase.com/ns/m.03ky_f1 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/film.film_cut",
@@ -159,13 +175,15 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Linked Movie Database | Database: LMDB.org (Linked Movie Database)",
+				"dbName": "Linked Movie Database",
+				"nsName": "Linked Movie Database",
 				"triples": [
 					"http://data.linkedmdb.org/page/film/17746 http://data.linkedmdb.org/resource/movie/runtime '115'",
 				]
 			},
 			{
-				"dbName": "Namespace: Wikidata | Database: Wikidata.org",
+				"dbName": "Wikidata.org",
+				"nsName": "Wikidata",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P2047 '98minute'",
 					"https://www.wikidata.org/wiki/Property:P2047 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
@@ -180,18 +198,21 @@ var differences =
 	},
 	{
 		"name": "film-release_date-date",
-		"diffCats": [1,11],
-		"description": "",
+		"diffCats": [1,11,14],
+		"description": "Difference [1biii], extended statement, is exhibited in how the Homegrown film's DVD release date is encapsulated within a Freebase entity, which simply exists to hold the release date values as properties. The other databases do not specifically have DVD release date statements to compare to, but the other release date statements in general are not encapsulated. Difference [3b] is shown in how DBPedia and freebase have multiple release_date predicates. Since the equivalency of the has_actor predicates across databases is uncertain, all databases exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/released '1998-04-17(xsd:date)'",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/releaseDate '1998-04-17(xsd:date)'"
 				]
 			},
 			{
-				"dbName": "Namespace: DBPedia->Freebase | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "DBPedia->Freebase",
+				"imgPath": "film-release_date-date/factforge-dbp-fb.png",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/released '1998-04-17(xsd:date)'",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/ontology/releaseDate '1998-04-17(xsd:date)'",
@@ -204,7 +225,9 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase",
+				"imgPath": "film-release_date-date/factforge-fb.png",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02r53vq http://dbpedia.org/property/released '1998-04-17(xsd:date)'",
 					"http://rdf.freebase.com/ns/m.02r53vq http://dbpedia.org/ontology/releaseDate '1998-04-17(xsd:date)'",
@@ -213,13 +236,15 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: LMDB | Database: http://data.linkedmdb.org/",
+				"dbName": "Linked Movie Database",
+				"nsName": "Linked Movie Database",
 				"triples": [
 					"http://data.linkedmdb.org/resource/film/17746 http://data.linkedmdb.org/resource/movie/initial_release_date '1998-04-17'",
 				]
 			},
 			{
-				"dbName": "Namespace: WikiData | Database: Wikidata.org",
+				"dbName": "Wikidata.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P577 '1998'",
 					"https://www.wikidata.org/wiki/Property:P577 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18618644",
@@ -229,7 +254,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"Homegrown_(film) wasCreatedOnDate '1998-04-17^^xsd:date'",
 					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#domain https://www.w3.org/2002/07/owl#Thing",
@@ -241,30 +267,34 @@ var differences =
 	},
 	{
 		"name": "film-located_in-location",
-		"diffCats": [1,2,14],
-		"description": "",
+		"diffCats": [1,14],
+		"description": "Difference [3b] is shown in how DBPedia has multiple statements making the claim film-located_in-location. They use the same predicate, but the objects have different URLs to a 'USA' entity. However, the 'USA' entities are not quite different because they ultimately redirect to the same USA resource. Since the equivalency of located_in predicates across databases is uncertain, all databases exhibit difference [1ai]",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: dbpedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/country http://dbpedia.org/resource/United_States(en)",
 				]
 			},
 			{
-				"dbName": "Namespace: DBPedia | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/country http://dbpedia.org/resource/United_States(en)",
 					"http://dbpedia.org/resource/Homegrown_(film) http://dbpedia.org/property/country http://dbpedia.org/resource/USA",
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02r53vq http://rdf.freebase.com/ns/film.film.country http://dbpedia.org/resource/United_States",
 				]
 			},
 			{
-				"dbName": "Namespace: WikiData | Database: Wikidata.org",
+				"dbName": "Wikidata.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q301083 https://www.wikidata.org/wiki/Property:P495 https://www.wikidata.org/wiki/Q30",
 					"https://www.wikidata.org/wiki/Property:P495 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Q6256",
@@ -272,7 +302,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"Homegrown_(film) isLocatedIn United_States",
 					"isLocatedIn https://www.w3.org/2000/01/rdf-schema#domain yagoPermanentlyLocatedEntity",
@@ -285,16 +316,19 @@ var differences =
 	{
 		"name": "restaurant-homepage-website",
 		"diffCats": [1,11,14],
-		"description": "some description of the difference highlighted by this example",
+		"description": "Difference [1biii], encapsulated object, is most prominently seen in FactForge.net's freebase statements involving the fb:common.topic.webpage predicate. The associated objects of those statements are entities which only exist to hold the homepage URL as a property. FactForge.net's freebase statements also highlight difference [3b], that there are multiple different statements with different homepage predicates stating In-N-Out Burger's homepage. Since the equivalency of homepage predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://xmlns.com/foaf/0.1/homepage 'in-n-out.com'",
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase",
+				"imgPath": "restaurant-homepage-website/factforge-fb.png",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02bb8z http://xmlns.com/foaf/0.1/homepage 'in-n-out.com'",
 					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.official_website 'in-n-out.com'",
@@ -303,18 +337,18 @@ var differences =
 					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.webpage http://rdf.freebase.com/ns/m.01xx006",
 					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/common.topic.webpage http://rdf.freebase.com/ns/m.0gz3576",
 					"http://rdf.freebase.com/ns/m.0chn0_k http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/common.webpage",
-					"http://rdf.freebase.com/ns/m.0chn0_k http://rdf.freebase.com/ns/common.webpage.resource http://rdf.freebase.com/ns/m.0chn0_b",
-					"http://rdf.freebase.com/ns/m.0chn0_b http://rdf.freebase.com/ns/type.object.name In-N-Out_Burger_Reviews@en",
 					"http://rdf.freebase.com/ns/m.01xx006 http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/common.webpage",
 					"http://rdf.freebase.com/ns/m.01xx006 http://rdf.freebase.com/ns/common.webpage.uri 'in-n-out.com'",
 					"http://rdf.freebase.com/ns/m.01xx006 http://rdf.freebase.com/ns/common.resource http://rdf.freebase.com/ns/m.0bjg1mf",
 					"http://rdf.freebase.com/ns/m.0bjg1mf http://rdf.freebase.com/ns/common.resource.annotations http://rdf.freebase.com/ns/m.04mjktx",
 					"http://rdf.freebase.com/ns/m.04mjktx http://rdf.freebase.com/ns/common.webpage.uri 'in-n-out.com'",
 					"http://rdf.freebase.com/ns/m.0gz3576 http://rdf.freebase.com/ns/common.webpage.uri 'in-n-out.com'"
-				]
+				] //"http://rdf.freebase.com/ns/m.0chn0_k http://rdf.freebase.com/ns/common.webpage.resource http://rdf.freebase.com/ns/m.0chn0_b",
+				  //"http://rdf.freebase.com/ns/m.0chn0_b http://rdf.freebase.com/ns/type.object.name In-N-Out_Burger_Reviews@en",
 			},
 			{
-				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 						"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P856 'www.in-n-out.com'",
 						"https://www.wikidata.org/wiki/Property:P856 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
@@ -324,7 +358,8 @@ var differences =
 					],
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 						"In-N-Out_Burger hasWebsite in-n-out.com",
 						"hasWebsite https://www.w3.org/2000/01/rdf-schema#domain yagoLegalActorGeo",
@@ -335,11 +370,14 @@ var differences =
 	},
 	{
 		"name": "restaurant-has_leader-person",
-		"diffCats": [1,14],
-		"description": "highlights how two different entities differ by label but are actually the same real world object",
+		"imgPath": "resataurant-has_leader-person/dbp-dbp.png",
+		"diffCats": [1,14,18],
+		"description": "Difference [3.c.iv] is highlighted by openlinksw.com's framebase namespaced person object has the label 'Lynsi Martinez', which is different from the label 'Lynsi Snyder' used by other databases. However, the labels are in reality referring to the same real-world person. Difference [3b] is exhibited by how the DBPedia namespace has two different statements, one using the predicate 'Key People' and the other the 'Key Person' predicate, to indicate the leaders of a restaurant. Since the equivalency of has_leader predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
+				"imgPath": "restaurant-has_leader-person/dbp-dbp.png",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/keyPerson http://dbpedia.org/resource/Lynsi_Snyder",
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/keyPeople http://dbpedia.org/resource/Lynsi_Snyder",
@@ -350,7 +388,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase->dbpedia/freebase | Database: FactForge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase->dbpedia/freebase",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02bb8z http://dbpedia.org/property/keyPeople http://dbpedia.org/resource/Lynsi_Snyder",
 					"http://rdf.freebase.com/ns/m.02bb8z http://dbpedia.org/property/keyPeople 'MarkTaylor(en)'",
@@ -359,7 +398,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase->Framebase/Freebase | Database: openlinksw.com",
+				"dbName": "openlinksw.com",
+				"nsName": "Freebase->Framebase/Freebase",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02bb8z http://framebase.org/ns/dereif-Leadership-isLedByLeader http://rdf.freebase.com/ns/m.043s6dz",
 				]
@@ -369,10 +409,11 @@ var differences =
 	{
 		"name": "restaurant-created_on-date",
 		"diffCats": [1,13,14],
-		"description": "",
+		"description": "Difference [3a] is exhibited by how Openlinksw.com has a statement claiming 'In-N-Out_Burger' is a subject of the category 'Restaurants established in 1948'. This doesn't explicitly state the creation date of In-N-Out, but implies it. Difference [3b] is shown in how Factforge.net uses both 'ptop:establishmentDate' and 'fb:organization.organization.date_founded' to express creation date. Since the equivalency of created_on predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: dbpedia/openlinksw.com",
+				"dbName": "openlinksw.com",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/foundingYear '1946(xsd:gYear)'",
 					"http://dbpedia.org/ontology/foundingYear https://www.w3.org/2000/01/rdf-schema#range xsd:gYear",
@@ -380,7 +421,9 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase | Database: Factforge.net",
+				"dbName": "Factforge.net",
+				"nsName": "Freebase",
+				"imgPath": "restaurant-created_on-date/factforge-fb.png",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02bb8z http://www.ontotext.com/proton/protontop#establishmentDate '1948'",
 					"http://www.ontotext.com/proton/protontop#establishmentDate https://www.w3.org/2000/01/rdf-schema#domain http://www.ontotext.com/proton/protontop#Organization",
@@ -389,7 +432,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P571 '1948'",
 					"https://www.wikidata.org/wiki/Property:P571 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
@@ -397,13 +441,15 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago->framebase | Database: OpenLinkSW.com",
+				"dbName": "OpenLinkSW.com",
+				"nsName": "Yago->framebase",
 				"triples": [
 					"http://yago-knowledge.org/resource/In-N-Out_Burger http://framebase.org/ns/dereif-Creating-isCreatedAtTime '1948-##-##'",
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"In-N-Out_Burger wasCreatedOnDate 1948-##-##^^xsd:date",
 					"wasCreatedOnDate https://www.w3.org/2000/01/rdf-schema#domain https://www.w3.org/2002/07/owl#Thing",
@@ -415,11 +461,12 @@ var differences =
 	},
 	{
 		"name": "restaurant-located_in-location",
-		"diffCats": [1,2,3],
-		"description": "",
+		"diffCats": [1,4,7,8,14],
+		"description": "Difference [1.a.ii.3] can be seen by comparing FactForge.net and DBPedia.org; FactForge.net has a statement where the location, Irvine, is a value ('Irvine,California,U.s.'), while DBPedia.org's Irvine object is an entity. DBPedia.org and Factforge.org also exhibits difference [3b]. Both databases have two different statements stating the restaurant's corporate location. It can also be argued that Max Planck's Yago statements exhibit differences [1.a.ii.5] and [1.a.iii]. It has two located_in statements that represents the location resource 'Irvine, California' as two different objects: 'Irvine', and 'California'. Since the equivalency of located_in predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/locationCity http://dbpedia.org/resource/Irvine,_California",
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/locationCity http://dbpedia.org/resource/Irvine,_California",
@@ -430,7 +477,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase | Database: Factforge.net",
+				"dbName": "Factforge.net",
+				"nsName": "Freebase",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02bb8z http://www.ontotext.com/proton/protontop#locatedIn 'Irvine,California,U.S.@en'",
 					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/organization.organization.headquarters http://rdf.freebase.com/ns/m.040s072",
@@ -439,7 +487,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P159 https://www.wikidata.org/wiki/Q49219",
 					"https://www.wikidata.org/wiki/Property:P159 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P276",
@@ -448,7 +497,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"In-N-Out_Burger isLocatedIn Irvine,_California",
 					"In-N-Out_Burger isLocatedIn Irvine",
@@ -463,11 +513,13 @@ var differences =
 	},
 	{
 		"name": "restaurant-creation_place-location",
-		"diffCats": [1,2,3,14],
-		"description": "",
+		"diffCats": [1,2,14],
+		"description": "DBPedia and Factforge exhibit difference [3b] in that both have two different statements, each with a different predicate, explicitly stating the creation place of In-N-Out. If one assumes that the dbo:foundationPlace and ptop:EstablishedIn are equivalent predicates, then it can be argued that the statements specifying their domain exhibit difference [1.a.ii.1], since both use 'rdfs:domain' but there are no known equivalency mappings between 'dbo:Organisation' and 'ptop:Organisation'. Since the equivalency of creation_place predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
+				"imgPath": "restaurant-creation_place-location/dbpedia-dbp.png",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/foundationPlace http://dbpedia.org/resource/Baldwin_Park,_California",
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/foundation http://dbpedia.org/resource/Baldwin_Park,_California",
@@ -476,7 +528,9 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Freebase | Database: Factforge.net",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase",
+				"imgPath": "restaurant-creation_place-location/factforge-fb.png",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.02bb8z http://www.ontotext.com/proton/protontop#establishedIn http://dbpedia.org/resource/Baldwin_Park,_California",
 					"http://rdf.freebase.com/ns/m.02bb8z http://rdf.freebase.com/ns/organization.organization.place_founded http://dbpedia.org/resource/Baldwin_Park,_California",
@@ -485,7 +539,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: WikiData | Database: WikiData.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q1205312 https://www.wikidata.org/wiki/Property:P740 https://www.wikidata.org/wiki/Q804878",
 					"https://www.wikidata.org/wiki/Property:P740 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18608993",
@@ -497,10 +552,10 @@ var differences =
 		{
 		"name": "restaurant-revenue-amount",
 		"diffCats": [1,3,12,14],
-		"description": "",
+		"description": "Difference [1.a.ii.2] is evident in that the statements in DBPedia, FactForge and Yago all claim In-N-Out's revenue to be different amounts. Difference [2a] is seen in how FactForge and Max Planck statements place the dollar unit in the amount object, but DBPedia does not. Difference [3b] is seen in that DBPedia.org and FactForge.com both use two statements, involving two different DBPedia revenue predicates, to make a claim about In-N-Out's revenue. Difference [1a] is also listed because there is no gaurantee of equivalency between Yago's hasRevenue predicate and the two DBPedia revenue predicates.",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org", "nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/revenue '5.75E8'",
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/revenue '5.75E8'",
@@ -509,7 +564,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: DBPedia | Database: FactForge.com",
+				"dbName": "FactForge.com",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/revenue 'EstimatedUS$465million@en'",
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/revenue '4.65E8(xsd:usDollar)'",
@@ -518,7 +574,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "Namespace: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"In-N-Out_Burger hasRevenue 625000000^^dollar",
 					"hasRevenue https://www.w3.org/2000/01/rdf-schema#domain yagoLegalActorGeo",
@@ -533,19 +590,22 @@ var differences =
 		"description": "",
 		"databases": [
 			{
-				"dbName": "Namespace: DBPedia | Database: Factforge.net & DBPedia.org",
+				"dbName": "Factforge.net & DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://dbpedia.org/property/firstFlight '1947-11-02(xsd:date)'" //"http://dbpedia.org/property/firstFlight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
 				]
 			},
 			{
-				"dbName": "NS: DBPedia & Freebase | DB: Factforge",
+				"dbName": "Factforge.net",
+				"nsName": "DBPedia & Freebase",
 				"triples": [
 					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://rdf.freebase.com/ns/aviation.aircraft_model.maiden_flight '1947-11-02'",
 				],
 			},
 			{
-				"dbName": "NS: Freebase | DB: Freebase data dumps & lod.openlinksw.com",
+				"dbName": "Freebase data dumps & lod.openlinksw.com",
+				"nsName": "Freebase",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.0cvjtgn http://rdf.freebase.com/ns/aviation.aircraft.first_flight '1947-11-02'",
 					"http://rdf.freebase.com/ns/aviation.aircraft.first_flight http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/2002/07/owl#FunctionalProperty",
@@ -558,7 +618,8 @@ var differences =
 				],
 			},
 			{
-				"dbName": "NS: Wikidata | Database: Wikidata.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q667443 http:www.wikidata.org/wiki/Property:P606 '2_November_1947'",
 					"http:www.wikidata.org/wiki/Property:P606 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18636219",
@@ -579,7 +640,8 @@ var differences =
 		"description": "",
 		"databases": [
 			{
-				"dbName": "NS: WikiData | Database: Wikidata.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q667443 https://www.wikidata.org/wiki/Property:P625 45°12'13''N,123°8'41''W",
 					"https://www.wikidata.org/wiki/Property:P625 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q18615777",
@@ -588,7 +650,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://www.georss.org/georss/point '45.204_-123.145'",
 					"http://dbpedia.org/resource/Hughes_H-4_Hercules http://www.w3.org/2003/01/geo/wgs84_pos#geometry 'POINT(-123.14499664307_45.203998565674)'",
@@ -597,7 +660,8 @@ var differences =
 				],
 			},
 			{
-				"dbName": "NS: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"Hughes_H-4_Hercules hasLongitude '-123.145^^<degrees>'",
 					"Hughes_H-4_Hercules hasLatitude '45.204^^<degrees>'"
@@ -611,7 +675,8 @@ var differences =
 		"description": "",
 		"databases": [
 			{
-				"dbName": "NS: WikiData | Database: Wikidata.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q10333 https://www.wikidata.org/wiki/Property:P115 https://www.wikidata.org/wiki/Q202762",
 					"https://www.wikidata.org/wiki/Property:P115 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q19829914",
@@ -625,7 +690,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"Valencia_CF owns Mestalla_Stadium",
 					"owns https://www.w3.org/2000/01/rdf-schema#domain yagoLegalActorGeo",
@@ -634,7 +700,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: Freebase->DBPedia/Freebase | Database: FactForge",
+				"dbName": "FactForge.net",
+				"nsName": "Freebase->DBPedia/Freebase",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.080_y http://rdf.freebase.com/ns/sports.sports_team.arena_stadium http://dbpedia.org/resource/Mestalla_Stadium",
 					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/ontology/ground http://dbpedia.org/resource/Estadio_Mestalla",
@@ -653,21 +720,24 @@ var differences =
 		"description": "Comparing a two-part statement",
 		"databases": [
 			{
-				"dbName": "NS: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Mestalla_Stadium http://dbpedia.org/property/location '46010'",
 					"http://dbpedia.org/resource/Mestalla_Stadium http://dbpedia.org/property/location 'Avenida_Suecia,_s/n_(en)'",
 				]
 			},
 			{
-				"dbName": "NS: WikiData | Database: Wikidata.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q8818",
 					"https://www.wikidata.org/wiki/Q8818 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29"
 				]
 			},
 			{
-				"dbName": "NS: Yago | Database: Max Planck",
+				"dbName": "Max Planck",
+				"nsName": "Yago",
 				"triples": [
 					"Mestalla_Stadium isLocatedIn Spain",
 					"Mestalla_Stadium isLocatedIn Valencia",
@@ -675,10 +745,11 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: DBPedia->Freebase/DBPedia | Database: FactForge",
+				"dbName": "FactForge.net",
+				"nsName": "DBPedia->DBPedia/Freebase",
 				"triples": [
 					"http://dbpedia.org/resource/Mestalla_Stadium http://rdf.freebase.com/ns/location.location.containedby http://dbpedia.org/resource/Valencia",
-					"http://dbpedia.org/resource/Valencia http://dbpedia.org/ontoloy/country http://dbpedia.org/resource/Spain",
+					"http://dbpedia.org/resource/Valencia http://dbpedia.org/ontology/country http://dbpedia.org/resource/Spain",
 					"http://dbpedia.org/resource/Valencia http://rdf.freebase.com/ns/location.location.containedby http://dbpedia.org/resource/Spain"
 				]
 			}
@@ -690,7 +761,8 @@ var differences =
 		"description": "",
 		"databases": [
 			{
-				"dbName": "NS: WikiData | Database: Wikidata.org",
+				"dbName": "WikiData.org",
+				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q10333 https://www.wikidata.org/wiki/Property:P127 https://www.wikidata.org/wiki/Q7175463",
 					"https://www.wikidata.org/wiki/Property:P127 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q16869121",
@@ -699,7 +771,8 @@ var differences =
 				]
 			},
 			{
-				"dbName": "NS: DBPedia | Database: DBPedia.org",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
 				"triples": [
 					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/property/owner http://dbpedia.org/resource/Peter_Lim",
 					"http://dbpedia.org/resource/Valencia_CF http://dbpedia.org/ontology/owner http://dbpedia.org/resource/Peter_Lim",
@@ -727,14 +800,16 @@ var differences =
 		"diffCats": [1,2,3,15,16,17],
 		"databases": [
 				{
-					"dbName": "NS: WikiData | DB: WikiData.org",
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
 					"triples": [
 						  "https://www.wikidata.org/wiki/Q47542 https://www.wikidata.org/wiki/Property:P105 https://www.wikidata.org/wiki/Q34740",
 						  "https://www.wikidata.org/wiki/Q47542 https://www.wikidata.org/wiki/Property:P225 'Castor'"
 					]
 				},
 				{
-					"dbName": "NS: DBPedia | DB: DBPedia.org",
+					"dbName": "DBPedia.org",
+					"nsName": "DBPedia",
 					"triples": [
 						  "http://dbpedia.org/resource/Beaver http://dbpedia.org/property/genus 'Castor(en)'"
 					]
@@ -747,13 +822,15 @@ var differences =
 		"diffCats": [1,2,3,14,17],
 		"databases": [
 				{
-					"dbName": "NS: WikiData | DB: WikiData.org",
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
 					"triples": [
 						  "https://www.wikidata.org/wiki/Q47542 https://www.wikidata.org/wiki/Property:P171 https://www.wikidata.org/wiki/Q261363"
 					]
 				},
 				{
-					"dbName": "NS: DBPedia | DB: DBPedia.org",
+					"dbName": "DBPedia.org",
+					"nsName": "DBPedia",
 					"triples": [
 						  "http://dbpedia.org/resource/Beaver http://dbpedia.org/property/familia http://dbpedia.org/resource/Castoridae",
 						  "http://dbpedia.org/resource/Beaver http://dbpedia.org/ontology/family http://dbpedia.org/resource/Castoridae"
@@ -767,14 +844,15 @@ var differences =
 		"diffCats": [1,2,3,14],
 		"databases": [
 				{
-					"dbName": "NS: WikiData | DB: WikiData.org",
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
 					"triples": [
 						  "https://www.wikidata.org/wiki/Q111 https://www.wikidata.org/wiki/Property:P397 https://www.wikidata.org/wiki/Q525",
 						  "https://www.wikidata.org/wiki/Property:P397 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q7243056"
 					]
 				},
 				{
-					"dbName": "NS: DBPedia->Freebase/DBPedia | DB: FactForge.net",
+					"dbName": "FactForge.org", "nsName": "DBPedia->Freebase/DBPedia",
 					"triples": [
 						  "http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/astronomy.orbital_relationship.orbits http://dbpedia.org/resource/Sun",
 						  "http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/base.exoplanetology.exoplanet.parent_star http://dbpedia.org/resource/Sun",
@@ -789,7 +867,8 @@ var differences =
 		"diffCats": [1,3,12],
 		"databases": [
 				{
-					"dbName": "NS: WikiData | DB: WikiData.org",
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
 					"triples": [
 						"https://www.wikidata.org/wiki/Q111 https://www.wikidata.org/wiki/Property:P2146 '668.5991±0.0001_Sol'",
 						"https://www.wikidata.org/wiki/Property:P2146 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q37640",
@@ -801,7 +880,8 @@ var differences =
 					]
 				},
 				{
-					"dbName": "NS: DBPedia | DB: FactForge.net",
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia",
 					"triples": [
 						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/orbitalPeriod '5.9354294400000006E7(xsd:double)'",
 						"http://dbpedia.org/resource/Mars http://dbpedia.org/ontology/orbitalPeriod '162501.12(xsd:double)'",
@@ -812,7 +892,8 @@ var differences =
 					]
 				},
 				{
-					"dbName": "NS: DBPedia->Freebase | DB: FactForge.net",
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia->Freebase",
 					"triples": [
 						"http://dbpedia.org/resource/Mars http://rdf.freebase.com/ns/astronomy.orbital_relationship.orbital_period '686.971'"
 					]
@@ -825,13 +906,15 @@ var differences =
 		"diffCats": [1,3,5,14],
 		"databases": [
 				{
-					"dbName": "NS: WikiData | DB: WikiData.org",
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
 					"triples": [
 						"https://www.wikidata.org/wiki/Q722232 https://www.wikidata.org/wiki/Property:P527 https://www.wikidata.org/wiki/Q2023856",
 					]
 				},
 				{
-					"dbName": "NS: DBPedia | DB: DBPedia.org",
+					"dbName": "DBPedia.org",
+					"nsName": "DBPedia",
 					"triples": [
 						"http://dbpedia.org/resource/Switchfoot http://dbpedia.org/ontology/bandMember http://dbpedia.org/resource/Jerome_Fontamillas",
 						"http://dbpedia.org/ontology/bandMember https://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/Band",
@@ -840,7 +923,7 @@ var differences =
 					]
 				},
 				{
-					"dbName": "NS: Freebase->DBPedia | DB: FactForge.net",
+					"dbName": "FactForge.org", "nsName": "Freebase->DBPedia",
 					"triples": [
 						"http://rdf.freebase.com/ns/m.0pr13 http://dbpedia.org/property/currentMembers http://dbpedia.org/resource/Jerome_Fontamillas",
 					]
