@@ -29,7 +29,7 @@ var differences =
 [
 	{
 		"name": "film-director-person",
-		"diffCats": [1,11,14], // not catd
+		"diffCats": [1,11,15], // not catd
 		"description": "DBPedia's dbo:director and dbp:director predicates are an example of difference [3b]. Compared to DBPedia.org and Max Planck Yago statements, WikiData's statements for the domain of the director predicate highllight an extension+predicate difference. Since the equivalency of the director predicates across databases is unclear, all databases exhibit difference [1ai].",
 		"databases": [
 			{
@@ -131,7 +131,7 @@ var differences =
 	},
 	{
 		"name": "film-runtime-duration",
-		"diffCats": [1,3,9,10,11,12,14], // not catd. took out #4
+		"diffCats": [1,3,9,10,11,12,15], // not catd. took out #4
 		"description": "Difference [1aii2] is highlighted by the discrepancy between WikiData's runtime value of '98 minute' and Freebase's 115 minutes. Assuming that freebase's runtime predicate is the same as the other runtime predicates, freebase's entities that encapsulate the actual runtime values are examples of difference [1bi] and [1biii]. [1bii] is shown in how WikiData specifies the domain of its runtime predicate (wd-prop:Duration) through its superclass, 'Wikidata property for items about works'. The openlinksw database just attached a statement specifying domain directly onto the duration predicate. Difference category [2] is highlighted by the fact that the value '115' is accompanied by the minute unit in openlinksw.com's dbpedia statements, but not in statements of other databases. Difference [3b] is shown in how DBPedia and freebase have multiple duration predicates, such as 'runtime(s)' and 'runtime(m)'' or 'film_cut.runtime' and 'film.runtime'. Since the equivalency of the runtime predicates across databases is unclear, all databases exhibit difference [1ai].",
 		"databases": [
 			{
@@ -198,7 +198,7 @@ var differences =
 	},
 	{
 		"name": "film-release_date-date",
-		"diffCats": [1,11,14],
+		"diffCats": [1,11,15],
 		"description": "Difference [1biii], extended statement, is exhibited in how the Homegrown film's DVD release date is encapsulated within a Freebase entity, which simply exists to hold the release date values as properties. The other databases do not specifically have DVD release date statements to compare to, but the other release date statements in general are not encapsulated. Difference [3b] is shown in how DBPedia and freebase have multiple release_date predicates. Since the equivalency of the has_actor predicates across databases is uncertain, all databases exhibit difference [1ai].",
 		"databases": [
 			{
@@ -267,7 +267,7 @@ var differences =
 	},
 	{
 		"name": "film-located_in-location",
-		"diffCats": [1,14],
+		"diffCats": [1,15],
 		"description": "Difference [3b] is shown in how DBPedia has multiple statements making the claim film-located_in-location. They use the same predicate, but the objects have different URLs to a 'USA' entity. However, the 'USA' entities are not quite different because they ultimately redirect to the same USA resource. Since the equivalency of located_in predicates across databases is uncertain, all databases exhibit difference [1ai]",
 		"databases": [
 			{
@@ -315,7 +315,7 @@ var differences =
 	},
 	{
 		"name": "restaurant-homepage-website",
-		"diffCats": [1,11,14],
+		"diffCats": [1,11,15],
 		"description": "Difference [1biii], encapsulated object, is most prominently seen in FactForge.net's freebase statements involving the fb:common.topic.webpage predicate. The associated objects of those statements are entities which only exist to hold the homepage URL as a property. FactForge.net's freebase statements also highlight difference [3b], that there are multiple different statements with different homepage predicates stating In-N-Out Burger's homepage. Since the equivalency of homepage predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
@@ -371,7 +371,7 @@ var differences =
 	{
 		"name": "restaurant-has_leader-person",
 		"imgPath": "resataurant-has_leader-person/dbp-dbp.png",
-		"diffCats": [1,14,18],
+		"diffCats": [1,15,19],
 		"description": "Difference [3.c.iv] is highlighted by openlinksw.com's framebase namespaced person object has the label 'Lynsi Martinez', which is different from the label 'Lynsi Snyder' used by other databases. However, the labels are in reality referring to the same real-world person. Difference [3b] is exhibited by how the DBPedia namespace has two different statements, one using the predicate 'Key People' and the other the 'Key Person' predicate, to indicate the leaders of a restaurant. Since the equivalency of has_leader predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
@@ -408,7 +408,7 @@ var differences =
 	},
 	{
 		"name": "restaurant-created_on-date",
-		"diffCats": [1,13,14],
+		"diffCats": [1,14,15],
 		"description": "Difference [3a] is exhibited by how Openlinksw.com has a statement claiming 'In-N-Out_Burger' is a subject of the category 'Restaurants established in 1948'. This doesn't explicitly state the creation date of In-N-Out, but implies it. Difference [3b] is shown in how Factforge.net uses both 'ptop:establishmentDate' and 'fb:organization.organization.date_founded' to express creation date. Since the equivalency of created_on predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
@@ -461,7 +461,7 @@ var differences =
 	},
 	{
 		"name": "restaurant-located_in-location",
-		"diffCats": [1,4,7,8,14],
+		"diffCats": [1,4,7,8,15],
 		"description": "Difference [1.a.ii.3] can be seen by comparing FactForge.net and DBPedia.org; FactForge.net has a statement where the location, Irvine, is a value ('Irvine,California,U.s.'), while DBPedia.org's Irvine object is an entity. DBPedia.org and Factforge.org also exhibits difference [3b]. Both databases have two different statements stating the restaurant's corporate location. It can also be argued that Max Planck's Yago statements exhibit differences [1.a.ii.5] and [1.a.iii]. It has two located_in statements that represents the location resource 'Irvine, California' as two different objects: 'Irvine', and 'California'. Since the equivalency of located_in predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
@@ -513,7 +513,7 @@ var differences =
 	},
 	{
 		"name": "restaurant-creation_place-location",
-		"diffCats": [1,2,14],
+		"diffCats": [1,2,15],
 		"description": "DBPedia and Factforge exhibit difference [3b] in that both have two different statements, each with a different predicate, explicitly stating the creation place of In-N-Out. If one assumes that the dbo:foundationPlace and ptop:EstablishedIn are equivalent predicates, then it can be argued that the statements specifying their domain exhibit difference [1.a.ii.1], since both use 'rdfs:domain' but there are no known equivalency mappings between 'dbo:Organisation' and 'ptop:Organisation'. Since the equivalency of creation_place predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
@@ -551,11 +551,13 @@ var differences =
 	},
 		{
 		"name": "restaurant-revenue-amount",
-		"diffCats": [1,3,12,14],
-		"description": "Difference [1.a.ii.2] is evident in that the statements in DBPedia, FactForge and Yago all claim In-N-Out's revenue to be different amounts. Difference [2a] is seen in how FactForge and Max Planck statements place the dollar unit in the amount object, but DBPedia does not. Difference [3b] is seen in that DBPedia.org and FactForge.com both use two statements, involving two different DBPedia revenue predicates, to make a claim about In-N-Out's revenue. Difference [1a] is also listed because there is no gaurantee of equivalency between Yago's hasRevenue predicate and the two DBPedia revenue predicates.",
+		"diffCats": [1,3,12,15],
+		"description": "Difference [1.a.ii.2] is evident in that the statements in DBPedia, FactForge and Yago all claim In-N-Out's revenue to be different amounts. Difference [2a] is seen in how FactForge and Max Planck statements place the dollar unit in the amount object, but DBPedia does not. Difference [3b] is seen in that DBPedia.org and FactForge.com both use two statements, involving two different DBPedia revenue predicates, to make a claim about In-N-Out's revenue. Difference [1ai] is also listed because there is no gaurantee of equivalency between Yago's hasRevenue predicate and the two DBPedia revenue predicates.",
 		"databases": [
 			{
-				"dbName": "DBPedia.org", "nsName": "DBPedia",
+				"dbName": "DBPedia.org",
+				"nsName": "DBPedia",
+				"imgPath": "restaurant-revenue-amount/dbpedia-dbp.png",
 				"triples": [
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/property/revenue '5.75E8'",
 					"http://dbpedia.org/resource/In-N-Out_Burger http://dbpedia.org/ontology/revenue '5.75E8'",
@@ -587,7 +589,7 @@ var differences =
 	{
 		"name": "aircraft-first_flight-date",
 		"diffCats": [1],
-		"description": "",
+		"description": "Since there are no guarantees for the equivalency of first_flight predicates across databases, all databases exhibit difference [1ai]. No other differences are clearly exhibited by statements about aircraft-first_flight-date. All object values are apparently equivalent. The extra statements made about the first_flight predicates in Freebase and WikiData are simply for exploration purposes, but no interesting differences are observed.",
 		"databases": [
 			{
 				"dbName": "Factforge.net & DBPedia.org",
@@ -636,8 +638,12 @@ var differences =
 	},
 	{
 		"name": "aircraft-coordinates-xy",
-		"diffCats": [1,3,5,7],
-		"description": "",
+		"diffCats": [1,3,5,7,12,13],
+		"description": "Since there are no guarantees for the equivalency of coordinates predicates across databases, all databases also exhibit difference [1ai]. Difference [1.a.ii.2], different value, is exhibited in that the latitude and longitude (XY) values specified by the databases differ in precision, format (decimal degrees versus degrees,minutes,seconds), and actual value. However, the actual value may also be different because the underlying datum that is used for the XY databases may differ acros databases, hence difference [2b] is exhibited. Another difference is that DBpedia.org has coordinates predicates that indicate the underlying datum used, while those of WikiData.org and Max Planck do not. This illustrates difference [2a]. Most notably, this examples exhibits [1.a.ii.5], multipart object. While DBPedia.org and WikiData both contain a statement that by itself associates a coordinates predicate to a single coordinate value containing both latitude and longitude, Max Planck and DBPedia.org (also) break up the coordinate value into two objects, one for latitude and one for longitude. Two separate, individual statements are used to make a claim about each coordinate component.",
+		/*** actually, can't say the following because I can't compare statements with predicate indicating a coordinate to statements with predicates indicating just a lat or long.
+			 ....both difference [1.a.ii.4.a] and...
+			WikiData and DBPedia's statements with object values that include both latitude and longitude are examples of embedded object values, compared to the statements that just  "
+		***/
 		"databases": [
 			{
 				"dbName": "WikiData.org",
@@ -671,8 +677,8 @@ var differences =
 	},
 	{
 		"name": "team-home_stadium-stadium",
-		"diffCats": [1,2,3,14],
-		"description": "",
+		"diffCats": [1,15,19],
+		"description": "Difference [3b] is exhibited by how FactForge has three different statements, each using a different predicate, to explicitly state the the stadium used by Valencia CF. The statement using the predicate dbo:ground involves the object dbr:Estadio_Mestalla, however dbr:Estadio_Mestalla's unique entity URL redirects to the same url as dbr:Mestalla_Stadium. Thus, the two entities can be considered to represent the same entity. This is an example of difference [3.c.iv]. Since there are no guarantees for the equivalency of home_stadium predicates across databases, all databases also exhibit difference [1ai]. Many of the statements made about the home_stadium predicates can be ignored. ",
 		"databases": [
 			{
 				"dbName": "WikiData.org",
@@ -702,6 +708,7 @@ var differences =
 			{
 				"dbName": "FactForge.net",
 				"nsName": "Freebase->DBPedia/Freebase",
+				"imgPath": "team-home_stadium-stadium/factforge-fb-dbp-fb.png",
 				"triples": [
 					"http://rdf.freebase.com/ns/m.080_y http://rdf.freebase.com/ns/sports.sports_team.arena_stadium http://dbpedia.org/resource/Mestalla_Stadium",
 					"http://rdf.freebase.com/ns/m.080_y http://dbpedia.org/ontology/ground http://dbpedia.org/resource/Estadio_Mestalla",
@@ -716,8 +723,8 @@ var differences =
 	},
 	{
 		"name": "stadium-in-city-in-country",
-		"diffCats": [1,3],
-		"description": "Comparing a two-part statement",
+		"diffCats": [1,3,10,14,15],
+		"description": "This is an experimental comparison of a two-statement-long claim, i.e. how two linked statements are structured across databases. Perhaps ideally a difference category would be created specifically for these claims which are generally most explicitly made with two statements. The most notable difference of this example between databases is that, in addition to the given a-b-c-d-e daisy chain structure, some databases also directly connects the subject with the objects of both statements. In terms of the difference categories already established, this example would fall under [3a], [3b], and [1b2] ([3a] because a-b-c and a-e-d can possibly imply a-b-c-d-e). Perhaps another difference called 'Daisy chained versus directly linked to subject' could be created. Difference [1ai] is exhibited because there are no guarantees on the equivalency of the predicates.",
 		"databases": [
 			{
 				"dbName": "DBPedia.org",
@@ -732,7 +739,8 @@ var differences =
 				"nsName": "WikiData",
 				"triples": [
 					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q8818",
-					"https://www.wikidata.org/wiki/Q8818 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29"
+					"https://www.wikidata.org/wiki/Q8818 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29",
+					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29"
 				]
 			},
 			{
@@ -757,8 +765,8 @@ var differences =
 	},
 	{
 		"name": "team-owner-person",
-		"diffCats": [3,14],
-		"description": "",
+		"diffCats": [1,15],
+		"description": "Difference [1ai] is exhibited simply because there are no statements found to ensure that owner predicates are equivalent between WikiData and DBPedia. Difference [3b] is seen in how DBPedia has two different statements claiming 'dbr:Peter Lim' as the owner of 'Valencia_CF'.",
 		"databases": [
 			{
 				"dbName": "WikiData.org",
@@ -796,8 +804,9 @@ var differences =
 	},
 	{
 		"name": "beaver-taxon-name",
-		"description" : "The example between WikiData and DBPedia illustrates how two databases might have completely different views on a concept as well. Wikidata: beaver is the same as castor, which is a taxon, a group of some taxonomic rank, of the taxonomic rank genus. BEAVER/CASTOR IS THE TAXON ITSELF. DBPedia: Beaver is separate from the taxon itself. Beaver is just a thing. It HAS a taxon, specifically genus, of Castor. But wait.. many specific species of beavers, such as the north american or eurasian, is dbo:genus of Beaver. So perhaps it can be said that the statement dbr:Beaver-dbo:genus-dbr:Castor has no additional information that indicates that Beaver is the taxon in itself, nor do sibling statements with Beaver as teh subject. This must be inferred by inspecting sub-taxon (species) of beavers. WikiData's has more sophistication.",
-		"diffCats": [1,2,3,15,16,17],
+		"description" : "The example between WikiData and DBPedia illustrates how two databases might have completely different views on the same entity as well. There is a guaranteed equivalency between 'wd:Castor (a.k.a Beaver)' and 'dbr:Beaver'. Wikidata treats the Castor (a.k.a. Beaver )entity as the taxon itself. A taxon is a group of some taxonomic rank. This is conveyed in how WikiData has statements that attach to the Castor entity properties such as 'wd-prop:taxon rank' and 'wd-prop:taxon name'.  Wikidata specifically claims Castor as having the taxonmic rank genus. In DBPedia, however, the entity Beaver is considered separate from being a taxon rank. It is just the Beaver. It instead HAS a taxon, specifically genus, of Castor. Thus, this example illustrates difference [3.c.i] and [3.c.iii]. In order to infer that Beaver is a taxon in itself, one could observe that many specific species (sub-taxon) of beavers, such as the North American or Eurasian beaver, is 'dbo:genus' of 'dbr:Beaver'. Moreoever, this example illustrates difference [3.c.ii] because 'wd:genus' is an object in WikiData, but 'dbp:genus' is a property in DBPedia.",
+		//So perhaps it can be said that the statement dbr:Beaver-dbo:genus-dbr:Castor has no additional information that indicates that Beaver is the taxon in itself, nor do sibling statements with Beaver as teh subject. This must be inferred by inspecting sub-taxon (species) of beavers. WikiData's has more sophistication.
+		"diffCats": [16,17,18],
 		"databases": [
 				{
 					"dbName": "WikiData.org",
@@ -818,8 +827,8 @@ var differences =
 	},
 	{
 		"name": "beaver-parent_taxon-name",
-		"description" : "",
-		"diffCats": [1,2,3,14,17],
+		"description" : "DBPedia makes multiple statemesn specifying that dbr:Beaver is of the family Castoridae, hence exhibiting difference [3b]. Difference [3.c.iii] is also listed because it can be argued that the predicate wd-prop:parent_taxon implies 'wd:Castor (a.k.a Beaver)' is considered a taxon in itself (the keyword is parent). Meanwhile, the predicate 'dbp:familia' does not imply this for dbr:Beaver. Since there is no evidence that the parent_taxon predicates are equivalent between the databases, the difference [1ai] is also illustrated.",
+		"diffCats": [1,15,18],
 		"databases": [
 				{
 					"dbName": "WikiData.org",
@@ -840,8 +849,8 @@ var differences =
 	},
 	{
 		"name": "mars-parent_body-sun",
-		"description" : "",
-		"diffCats": [1,2,3,14],
+		"description" : "This example mainly highlights differnece [3b] because FactForge holds multiple statements stating that the Sun is the parent body around which Mars orbits. Since there is no evidence that the parent_body predicates are equivalent between the databases, the difference [1ai] is also illustrated.",
+		"diffCats": [1,15],
 		"databases": [
 				{
 					"dbName": "WikiData.org",
@@ -863,12 +872,13 @@ var differences =
 	},
 	{
 		"name": "mars-orbital_period-duration",
-		"description" : "only a subset of the myrid of time-related triples included here, especially for wikidata",
+		"description" : "Difference [2a] is clearly exhibited by how one statement in Wikidata and three statements in FactForge include the unit of duration in the object, but the other four statements in FactForge do not. Differing units of duration is one cause of difference in value, [1.a.2.ii]. However, there are also outright differences in value. For example, WikiData specifies the duration as 668.5991 sols, which is equivalent to 688.86 days. However, FactForge has a statement specifying the duration as 686.971 days. Since there is no evidence that the orbital_period predicates are equivalent between the databases, the difference [1ai] is also illustrated.", //only a subset of the myrid of time-related triples included here, especially for wikidata
 		"diffCats": [1,3,12],
 		"databases": [
 				{
 					"dbName": "WikiData.org",
 					"nsName": "WikiData",
+					"imgPath": "mars-orbital_period-duration/wikidata-wd.png",
 					"triples": [
 						"https://www.wikidata.org/wiki/Q111 https://www.wikidata.org/wiki/Property:P2146 '668.5991±0.0001_Sol'",
 						"https://www.wikidata.org/wiki/Property:P2146 https://www.wikidata.org/wiki/Property:P1629 https://www.wikidata.org/wiki/Q37640",
@@ -902,8 +912,8 @@ var differences =
 	},
 	{
 		"name": "band-band_member-person",
-		"description" : "highlights how different databases have different uses of the same predicate. DBPedia.org pairs currentMembers with a string contianing all members, while FactForge pairs currentMembers with individual band member entities.",
-		"diffCats": [1,3,5,14],
+		"description" : "[1.a.ii.4.a] i.e. 'embedded value' is the most interesting difference highlighted by this example. FactForge and DBPedia use the same 'dbp:currentMembers' predicate in two different ways. DBPedia.org associates 'dbp:currentMembers' to a string value contianing all members of the band Switchfoot, while FactForge pairs 'dbp:currentMembers' with an entity representing just one individual band member. This is also the reason this example exhibits difference [1.a.ii.5]. Since there is no evidence that the band_member predicates are equivalent between the databases, the difference [1ai] is also illustrated.",
+		"diffCats": [1,4,5],
 		"databases": [
 				{
 					"dbName": "WikiData.org",

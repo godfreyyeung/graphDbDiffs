@@ -88,9 +88,13 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                         <li>
                             Value
                             <ol type="a">
-                                <li type="a">
+                                <li>
                                     <input type="checkbox" name="Unit of Measure attached to different nodes" onchange="checkboxClicked(event)" value="12" />
                                     Unit of Measure attached to different nodes
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="Unit of Measure attached to different nodes" onchange="checkboxClicked(event)" value="13" />
+                                    Differing underlying method of calculation
                                 </li>
                             </ol>
                         </li>
@@ -98,30 +102,30 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             Meta
                             <ol type="a">
                                 <li>
-                                    <input type="checkbox" name="Claim inferrable from another claim" onchange="checkboxClicked(event)" value="13" />
+                                    <input type="checkbox" name="Claim inferrable from another claim" onchange="checkboxClicked(event)" value="14" />
                                     Claim inferrable from another claim
                                 </li>
                                 <li>
-                                    <input type="checkbox" name="Multiple different statements make the same claim" onchange="checkboxClicked(event)" value="14" />
+                                    <input type="checkbox" name="Multiple different statements make the same claim" onchange="checkboxClicked(event)" value="15" />
                                     Multiple different statements make the same claim
                                 </li>
                                 <li>
                                     Different view of the world
                                     <ol type="i">
                                         <li>
-                                            <input type="checkbox" name="Nuance expressed with additional statements" onchange="checkboxClicked(event)" value="15" />
+                                            <input type="checkbox" name="Nuance expressed with additional statements" onchange="checkboxClicked(event)" value="16" />
                                             Nuance expressed with additional statements
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="Predicate considered an Object, or vice versa" onchange="checkboxClicked(event)" value="16" />
+                                            <input type="checkbox" name="Predicate considered an Object, or vice versa" onchange="checkboxClicked(event)" value="17" />
                                             Predicate considered an Object (and vice versa)
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="17" />
+                                            <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="18" />
                                             Different idea of entity
                                         </li>
                                         <li>
-                                            <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="18" />
+                                            <input type="checkbox" name="Different idea of entity" onchange="checkboxClicked(event)" value="19" />
                                             Different entity label for same resource
                                         </li>
                                     </ol>
@@ -181,7 +185,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                         <dd>
                                                             In one DB a statement's object only consists of one focused, single entity or value.
                                                             In another DB that that object consists of multiple additional entities or values embedded
-                                                            alongside the one entity or value.
+                                                            alongside the one entity or value. Requires the predicates to be equivalent or conceptually serve the same purpose.
                                                         </dd>
                                                     </dl>
                                                     <ol type="a">
@@ -209,7 +213,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                     <dl>
                                                         <dt>Multipart Object</dt>
                                                         <dd>
-                                                            One DB represents a resource as a single entity or value, while another DB uses multiple statements to represent that resource as multiple entities or value. This may mean that one DB conceptually represents an entity as having one part, while another DB represents that entity as comprised of multiple parts.
+                                                            One DB represents a resource as a single entity or value, while another DB uses multiple statements to represent that resource as multiple entities or value. This may mean that one DB conceptually represents an entity as having one part, while another DB represents that entity as comprised of multiple parts. Does not require the predicates to be equivalent, just that conceptually the multiple statements one database serve the same purpose as the single statement in the other.
                                                             <!--
                                                             In one DB, a statement's object is an entity which has conceptually only one part to it.
                                                             In another DB, that entity is conceptually comprised of multiple parts, and this is
@@ -265,10 +269,16 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                 <dd>Differences regarding values.
                             </dl>
                             <ol type="a">
-                                <li type="a">
+                                <li>
                                     <dl>
                                         <dt>Unit of Measure attached to different nodes</dt>
                                         <dd>For example, the currency unit is attached to the predicate in one DB, while to the object in another DB.
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>Differing underlying method of calculation</dt>
+                                        <dd>Numeric values have different assumed underlying methods of calculation.</dd>
                                     </dl>
                                 </li>
                             </ol>
@@ -363,12 +373,12 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             NS = Namespace<br>
                             DB = Database<br>
                             Objects in single quotes, for example &#39;$342&#39;, represent literals.
-
                             untangle -- often drawn in wrong order
                                 use the slider on bottom left to adjust link length.
                             click to view image
                             colors represent n-degree statements
                             click example description to view description of differences highlighted by example
+                            Predicate should always lie between a subject and an object.
                         </section>
                         <section id="description-view" class="view" style="display:none">
                             <h4>Example's Description:</h4>
@@ -439,30 +449,33 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                         <li data-value="12">
                                             Unit of Measure attached to different nodes
                                         </li>
+                                        <li data-value="13">
+                                            Different underlying method of calculation
+                                        </li>
                                     </ol>
                                 </li>
                                 <li>
                                     Meta
                                     <ol type="a">
-                                        <li data-value="13">
+                                        <li data-value="14">
                                             Claim inferrable from another claim
                                         </li>
-                                        <li data-value="14">
+                                        <li data-value="15">
                                             Multiple different statements make the same claim
                                         </li>
                                         <li>
                                             Different view of the world
                                             <ol type="i">
-                                                <li data-value="15">
+                                                <li data-value="16">
                                                     Nuance expressed with additional statements
                                                 </li>
-                                                <li data-value="16">
+                                                <li data-value="17">
                                                     Predicate considered an Object (and vice versa)
                                                 </li>
-                                                <li data-value="17">
+                                                <li data-value="18">
                                                     Different idea of entity
                                                 </li>
-                                                <li data-value="18">
+                                                <li data-value="19">
                                                     Different entity label for same resource
                                                 </li>
                                             </ol>

@@ -126,7 +126,7 @@ var labels = {
 	//parent_taxon dbpedia
 	"http://dbpedia.org/property/familia": "dbp:familia",
 	"http://dbpedia.org/ontology/family": "dbo:family",
-	"http://dbpedia.org/resource/Castoridae": "dbr:Catoridae",
+	"http://dbpedia.org/resource/Castoridae": "dbr:Castoridae",
 	//parent_body wikidata
 	"https://www.wikidata.org/wiki/Q111": "wd:Mars",
 	"https://www.wikidata.org/wiki/Property:P397": "wd-prop:Parent astronomical body",
@@ -197,6 +197,7 @@ var labels = {
 	"https://www.wikidata.org/wiki/Property:P495": "wd-prop:country of origin",
 	"https://www.wikidata.org/wiki/Q30": "wd:United States",
 	"https://www.wikidata.org/wiki/Q6256": "wd:country",
+	"https://www.wikidata.org/wiki/Property:P17": "wd-prop:country",
 	//Movies Freebase
 	"http://rdf.freebase.com/ns/film.film.directed_by": "fb:film.film. directed_by",
 	"http://rdf.freebase.com/ns/film.film.runtime": "fb:film. film.runtime",
