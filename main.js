@@ -15,6 +15,7 @@ function setForceSize(parentDomNode, svgElement, colaObj){
 var categoriesNav = $("#categories");
 var exampleNav = $("#examples");
 var description = $("#description-view");
+var descriptionTitle = $("#description-title");
 var descriptionText = $("#description-text");
 
 var activeCategories = [];
@@ -55,6 +56,7 @@ function loadExampleList(differenceArr, filterArr){
 	        	}
 	        });
 
+	        descriptionTitle.html(difference.name);
 	        descriptionText.html(difference.description);
 
 	    })

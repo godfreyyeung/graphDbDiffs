@@ -88,7 +88,7 @@ body {
   padding: 0 0 0 16px;
 }
 
-#description-text{
+#description-text, #description-title{
   padding:5px;
 }
 .activeCat{
@@ -209,4 +209,8 @@ path.link {
 
 text, .label{
     cursor: pointer;
+}
+
+dl#glossary dd {
+  margin-bottom: 6px;
 }

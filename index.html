@@ -139,49 +139,49 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                     <ol>
                         <li>
                             <dl>
-                                <dt>Structural</dt>
+                                <dt><dfn>Structural</dfn></dt>
                                 <dd>Differences related to node and link placement.</dd>
                             </dl>
                             <ol type="a">
                                 <li>
                                     <dl>
-                                        <dt>Different Triple/Nodes</dt>
+                                        <dt><dfn>Different Triple/Nodes</dfn></dt>
                                         <dd>The triple statements themselves use one or more different entities or values.</dd>
                                     </dl>
                                     <ol type="i">
                                         <li>
                                             <dl>
-                                                <dt>Different Predicate</dt>
+                                                <dt><dfn>Different Predicate</dfn></dt>
                                                 <dd>The predicate node is a different entity.</dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Different Object</dt>
+                                                <dt><dfn>Different Object</dfn></dt>
                                                 <dd>The object node is a different entity or value.</dd>
                                             </dl>
                                             <ol type="1">
                                                 <li>
                                                     <dl>
-                                                        <dt>Different Entity</dt>
+                                                        <dt><dfn>Different Entity</dfn></dt>
                                                         <dd>The object node is a different entity.</dd>
                                                     </dl>
                                                 </li>
                                                 <li>
                                                     <dl>
-                                                        <dt>Different Value</dt>
+                                                        <dt><dfn>Different Value</dfn></dt>
                                                         <dd>The object node is a different literal, i.e. a different string or number.</dd>
                                                     </dl>
                                                 </li>
                                                 <li>
                                                     <dl>
-                                                        <dt>Single Entity vs Value</dt>
+                                                        <dt><dfn>Single Entity vs Value</dfn></dt>
                                                         <dd>The object is an entity in one DB, and a value in another.</dd>
                                                     </dl>
                                                 </li>
                                                 <li>
                                                     <dl>
-                                                        <dt>Embedded Object</dt>
+                                                        <dt><dfn>Embedded Object</dfn></dt>
                                                         <dd>
                                                             In one DB a statement's object only consists of one focused, single entity or value.
                                                             In another DB that that object consists of multiple additional entities or values embedded
@@ -191,7 +191,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                     <ol type="a">
                                                         <li>
                                                             <dl>
-                                                                <dt>Value</dt>
+                                                                <dt><dfn>Value</dfn></dt>
                                                                 <dd>
                                                                     In one DB, a statement's object is a single value, and in another
                                                                     that single value is embedded into part of a larger value.
@@ -200,7 +200,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                         </li>
                                                         <li>
                                                             <dl>
-                                                                <dt>Object</dt>
+                                                                <dt><dfn>Object</dfn></dt>
                                                                 <dd>
                                                                     In one DB, astatement's object is a single entity, and in another
                                                                     that entity conceptually represents multiple other resources.
@@ -211,7 +211,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                                 </li>
                                                 <li>
                                                     <dl>
-                                                        <dt>Multipart Object</dt>
+                                                        <dt><dfn>Multipart Object</dfn></dt>
                                                         <dd>
                                                             One DB represents a resource as a single entity or value, while another DB uses multiple statements to represent that resource as multiple entities or value. This may mean that one DB conceptually represents an entity as having one part, while another DB represents that entity as comprised of multiple parts. Does not require the predicates to be equivalent, just that conceptually the multiple statements one database serve the same purpose as the single statement in the other.
                                                             <!--
@@ -226,7 +226,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Both Predicate and Object are Different</dt>
+                                                <dt><dfn>Both Predicate and Object are Different</dfn></dt>
                                                 <dd>The given example exhibits both differences 1ai and 1aii.</dd>
                                             </dl>
                                         </li>
@@ -234,7 +234,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>Extended Statement</dt>
+                                        <dt><dfn>Extended Statement</dfn></dt>
                                         <dd>
                                             Compared to a given statement forming a claim in one database,
                                             a statement forming the same claim in another database has additional intermediate statements before or after the predicate
@@ -244,19 +244,19 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                     <ol type="i">
                                         <li>
                                             <dl>
-                                                <dt>General case</dt>
+                                                <dt><dfn>General case</dfn></dt>
                                                 <dd>The general case assumes the subject, predicate and object are the equivalent across the compared DBs.</dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Added Expressivity</dt>
+                                                <dt><dfn>Added Expressivity</dfn></dt>
                                                 <dd>The additional intermediate statements add expressiveness to the claim.</dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Encapsulated Object</dt>
+                                                <dt><dfn>Encapsulated Object</dfn></dt>
                                                 <dd>The additional intermediate statements encapsulates the original object, which may be either an entity or a value, without adding any expressivity to the claim. The new intermediate entity may only exist to represent the original entity at a higher level, holding the original entity as a property.</dd>
                                         </li>
                                     </ol>
@@ -265,19 +265,19 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                         </li>
                         <li>
                             <dl>
-                                <dt>Value</dt>
+                                <dt><dfn>Value</dfn></dt>
                                 <dd>Differences regarding values.
                             </dl>
                             <ol type="a">
                                 <li>
                                     <dl>
-                                        <dt>Unit of Measure attached to different nodes</dt>
+                                        <dt><dfn>Unit of Measure attached to different nodes</dfn></dt>
                                         <dd>For example, the currency unit is attached to the predicate in one DB, while to the object in another DB.
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>Differing underlying method of calculation</dt>
+                                        <dt><dfn>Differing underlying method of calculation</dfn></dt>
                                         <dd>Numeric values have different assumed underlying methods of calculation.</dd>
                                     </dl>
                                 </li>
@@ -285,13 +285,13 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                         </li>
                         <li>
                             <dl>
-                                <dt>Meta</dt>
+                                <dt><dfn>Meta</dfn></dt>
                                 <dd>Differences stem from conceptual differences between databases, such as how they view the world.</dd>
                             </dl>
                             <ol type="a">
                                 <li>
                                     <dl>
-                                        <dt>Claim inferrable from another claim</dt>
+                                        <dt><dfn>Claim inferrable from another claim</dfn></dt>
                                         <dd>
                                             Within one database, a given claim can be implied or inferred from statements meant to make another claim.
                                             That database may or may not have statements explicitly forming the given claim.
@@ -300,7 +300,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>Multiple different statements make the same claim</dt>
+                                        <dt><dfn>Multiple different statements make the same claim</dfn></dt>
                                         <dd>
                                             Within one database there are multiple statements explicitly forming the same claim.
                                         </dd>
@@ -311,19 +311,19 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                     <ol type="i">
                                         <li>
                                             <dl>
-                                                <dt>Nuance expressed with additional statements</dt>
+                                                <dt><dfn>Nuance expressed with additional statements</dfn></dt>
                                                 <dd>Nuanced view is created using additional statements, which are not necessarily “extended statements”</dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Predicate considered an Object, or vice versa</dt>
+                                                <dt><dfn>Predicate considered an Object, or vice versa</dfn></dt>
                                                 <dd>An entity is used as a predicate in one DB but as an object in another.</dd>
                                             </dl>
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Different idea of entity</dt>
+                                                <dt><dfn>Different idea of entity</dfn></dt>
                                                 <dd>
                                                     Given equivalent entities across databases (e.g. perhaps linked using owl:sameAs)
                                                     different databases may still have different ideas on what that entity inherently means or how it should be used.
@@ -332,7 +332,7 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                         </li>
                                         <li>
                                             <dl>
-                                                <dt>Different entity label for same resource</dt>
+                                                <dt><dfn>Different entity label for same resource</dfn></dt>
                                                 <dd>
                                                     Different databases may label an entity differently, but the underlying resource of the entities are the same.
                                                 </dd>
@@ -352,11 +352,11 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                         <div id="category" class="nav-btn active">
                             Examples
                         </div>
-                        <div id="instruction" class="nav-btn">
-                            Instructions
-                        </div>
                         <div id="description" class="nav-btn">
                             Example Description
+                        </div>
+                        <div id="instruction" class="nav-btn">
+                            Instructions
                         </div>
                     </section>
                     <section class="sidebar-content">
@@ -365,22 +365,11 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                             <div id="examples">
                             </div>
                         </section>
-                        <section id="instruction-view" class="view" style="display:none">
-                            Blue nodes are subjects and objects. <br>
-                            Orange nodes are predicates. <br>
-                            Thus a triple consists of a blue, orange and another blue node chained together in order. <br>
-                            Statements about labels excluded. <br>
-                            NS = Namespace<br>
-                            DB = Database<br>
-                            Objects in single quotes, for example &#39;$342&#39;, represent literals.
-                            untangle -- often drawn in wrong order
-                                use the slider on bottom left to adjust link length.
-                            click to view image
-                            colors represent n-degree statements
-                            click example description to view description of differences highlighted by example
-                            Predicate should always lie between a subject and an object.
-                        </section>
                         <section id="description-view" class="view" style="display:none">
+                            <h4>Selected Example:</h4>
+                            <section id="description-title">
+                                 No example selected yet.
+                            </section>
                             <h4>Example's Description:</h4>
                             <section id="description-text">
                                  No example selected yet.
@@ -484,10 +473,107 @@ using CSS to set height of body, html when not using <!DOCTYPE html> doesn't wor
                                 </li>
                             </ol>
                         </section>
+                        <section id="instruction-view" class="view" style="display:none">
+                            <h4>Instructions</h4>
+                            This tool visualizes triples (statements) that make up a claim. It also categorizes example claims by the cross-database differences exhibited their triples.
+                            <ol>
+                                <li>
+                                    Click on an example claim under the "Examples" tab to load graph visualizations its triples.
+                                </li>
+                                <li>
+                                    Click the "View Categories" button to filter examples by difference category. An example only appears if it is associated with all checkboxed categories. Scroll down on the categories pane to see descriptions of each category.
+                                </li>
+                                <li>
+                                    Once an example is selected, click the "Example Description" tab to read about the differences exhibited by that example. All exhibited differences are also shown in a list, bolded and highlighted.
+                                </li>
+                                <li>
+                                    Zoom out on your browser (Ctrl, -) for the best viewing experience of the graph visualizations. Use Chrome or Firefox for best compatability.
+                                </li>
+                                <li>
+                                    In the graphs, <span style="color:rgb(31, 119, 180)">blue nodes</span> are subejcts and objects, while <span style="color:rgb(255, 127, 14)">orange nodes</span> are predicates</li>.
+                                <li>
+                                    Thus, a triple (statement) consists of a blue, orange, and another blue node, chained in that order. Orange nodes should always sit between blue nodes.
+                                </li>
+                                <li>
+                                    The very first statement in a visualization is laid horizontally.
+                                </li>
+                                <li>
+                                    A given statement's links will be the same color. The link colors change depending on the number of statements that sit between the statement's subject and the first (horizontal) statement. For example, if a statement's subject is the subject, predicate or object of the first statement, then its links will be the same color as the first statement. Statements whose subject node is the predicate or object of this latter statement will be another color, and so on. 
+                                </li>
+                                <li>
+                                    Click and drag nodes to re-adjust and untangle the graphs. The graph is not smart enough to position the nodes perfectly. For example, for many graphs the nodes must be dragged so that blue nodes on each side of an orange node, instead of the orange node sitting to the left or right of two blue nodes. 
+                                </li>
+                                <li>
+                                    Click "Toggle Overlaps" to prevent nodes from overlapping one another. Click again to deactivate this feature.
+                                </li>
+                                <li>
+                                    <b>If a graph is too hard to untangle, click "Show Image" (on complex graphs) to view an image of the untangled graph.</b>
+                                </li>
+                                <li>
+                                    Use the range slider at the bottom left of each graph to adjust link length.
+                                </li>
+                                <li>
+                                    Click "Show triples" to see the original triples that make up the visualized graph.
+                                </li>
+                                <li>
+                                    Literal values are wrapped in single quotes. For example &#39;$342&#39;.
+                                </li>
+                                <li>
+                                    The statements shown are hand selected. They may or may not be relevant to the differences exhibited.
+                                </li>
+                            </ol>
+                            <h4>Glossary</h4>
+                            Most fundamental definitions listed first.
+                            <br><br>
+                            <dl id="glossary">
+                                <dt><dfn>Resource/Item</dfn></dt>
+                                <dd>an abstract concept. A “thing” in the universe.<dd>
+                                <dt><dfn>Entity</dfn></dt>
+                                <dd>A resource’s digital manifestation, meaning its serialized version that has an associated identifying URI or URL. <dd>
+                                <dt><dfn>Value</dfn></dt>
+                                <dd>As opposed to an Entity, a value is an serialized resource without an associated URI.<dd>
+                                <dt><dfn>Subject</dfn></dt>
+                                <dd>An entity being described (by a RDF statement). It is the entity represented by the URI/URL used as the first component in a RDF statement.
+                                <dt><dfn>Predicate/Property</dfn></dt> 
+                                <dd>
+                                An entity (used in a RDF statement) describing the relationship between a subject and an object, specifically how the subject is described by the object. It is represented by the URI/URL in the second component of the RDF statement.
+                                </dd>
+                                <dt><dfn>Object</dfn></dt>
+                                <dd>
+                                An entity (used in a RDF statement) that describes the subject according to some relationship (specified by a predicate). It is represented by the URI/URL in the third component of the RDF statement. It can also be a value.
+                                </dd>
+                                <dt><dfn>RDF statement/statement/RDF Triple</dfn></dt>
+                                <dd>The concatenation, by some syntax, of subject, predicate, and object URI/URLs to describe a knowledge graph relationship between those entities.<dd>
+                                <dt><dfn>Claim</dfn></dt>
+                                <dd>An assertion of a fact in the universe, made using one or more statements.<dd>
+                                <dt><dfn>Node</dfn></dt>
+                                <dd>A polygon, within a visual representation of a graph database, representing a subject, predicate or object entity within the knowledge database.<dd>
+                                <dt><dfn>Link</dfn></dt>
+                                <dd>
+                                A line, within a visual representation of a graph database, representing a predicate entity. 
+                                </dd>
+                                <dt><dfn>Class</dfn></dt>
+                                <dd>
+                                An entity representing a classification of entities into groups which share common characteristics.
+                                </dd>
+                                <dt><dfn>Individual/Instance</dfn></dt> An entity which is part of a group. The classification of this entity is carried out by a statement describing the entity, i.e. the entity is the subject, with an rdf:type or equivalent predicate and a class object representing the group that the entity is part of.
+                                </dd>
+                                <dt><dfn>Subclass</dfn></dt>
+                                <dd>
+                                A class entity that is an extension of another class, a parent class. This extension is specified by the instancing of this entity to that parent class. 
+                                </dd>
+                                <dt><dfn>NS</dfn></dt>
+                                <dd>Namespace<dd>
+                                <dt><dfn>DB</dfn></dt>
+                                <dd>Database<dd>
+                                <dt>
+                            </dl>         
+                        </section>
                     </section>
                 </div>
                 <div class="svgArea col-sm-10 nopadding">
                     <row class="container nopadding" id="dbExamples">
+                        <div style="font-size: 32px; padding: 100px 20px 20px 20px;">&lt;--- Select an example on the left to visualize </div>
                     </row>
                 </div>
             </div>
