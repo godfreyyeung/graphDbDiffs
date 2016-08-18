@@ -39,7 +39,7 @@ function loadExampleList(differenceArr, filterArr){
 	exampleNav.empty();
 	displayArr.forEach(function(curVal, idx, arr){
     	var difference = curVal;
-    	var newBtn = $('<div class="exampleBtn">'+difference.name+'</div>');
+    	var newBtn = $('<div class="exampleBtn">'+idx+') '+difference.name+'</div>');
 
     	newBtn.click(function(evt){
     		$(evt.target).toggleClass('selected', true).siblings().removeClass('selected');

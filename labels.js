@@ -304,4 +304,41 @@ var labels = {
 	//Restaurant Yago
 	"http://yago-knowledge.org/resource/In-N-Out_Burger": "yago:In-N-Out_Burger",
 	"http://framebase.org/ns/dereif-Creating-isCreatedAtTime": "frambase:dereif- Creating- isCreatedAtTime",
+	//nationality WikiData
+	"https://www.wikidata.org/wiki/Q1189": "wd:Usain Bolt",
+	"https://www.wikidata.org/wiki/Property:P27": "wd-prop:Country of Citizenship",
+	"https://www.wikidata.org/wiki/Q766": "wd:Jamaica",
+	"https://www.wikidata.org/wiki/Property:P1628": "wd:equivalent property",
+	"http://schema.org/nationality": "schema.org/nationality",
+	//nationality DBPedia
+	"http://dbpedia.org/resource/Usain_Bolt": "dbr:Usain Bolt",
+	"http://dbpedia.org/property/nationality": "dbp:nationality",
+	"http://dbpedia.org/resource/Jamaica": "dbr:Jamaica",
+	"http://rdf.freebase.com/ns/people.person.nationality": "fb:people.person.nationality",
+	//birthplace WikiData
+	"https://www.wikidata.org/wiki/Q39562": "wd:Michael Phelps",
+	"https://www.wikidata.org/wiki/Property:P19": "wd-prop:Birthplace",
+	"https://www.wikidata.org/wiki/Q755615": "wd:Towson",
+	"http://schema.org/birthPlace": "schema.org/birthPlace",
+	"https://www.wikidata.org/wiki/Q488668": "wd:Baltimore County",
+	"https://www.wikidata.org/wiki/Q1391": "wd:Maryland",
+	//birthplace DBPedia
+	"http://dbpedia.org/resource/Michael_Phelps": "dbr:Michael Phelps",
+	"http://rdf.freebase.com/ns/people.person.place_of_birth": "fb:people.person. place_of_birth",
+	"http://dbpedia.org/resource/Towson,_Maryland": "dbr:Townson, Maryland",
+	//ingredient WikiData
+	"https://www.wikidata.org/wiki/Q375": "wd:Waffle",
+	"https://www.wikidata.org/wiki/Q29493": "wd:Batter",
+	"https://www.wikidata.org/wiki/Q36465": "wd:Flour",
+	//ingredient DBPedia
+	"http://dbpedia.org/resource/Waffle": "dbr:Waffle",
+	"http://dbpedia.org/ontology/ingredient": "dbo:ingredient",
+	"http://dbpedia.org/ontology/ingredientName": "dbo:ingredientName",
+	"http://dbpedia.org/property/mainIngredient": "dbp:mainIngredient",
+	"http://dbpedia.org/resource/Batter_(cooking)": "dbr:Batter _(cooking)",
+	"http://dbpedia.org/resource/Dough": "dbr:Dough",
+	"'Batterordough'": "'Batter or dough'",
+	"http://dbpedia.org/resource/Flour": "dbr:Flour",
+	//ingredient freebase
+	"http://rdf.freebase.com/ns/food.dish.ingredients": "fb:food.dish.ingredients",
 }

@@ -372,7 +372,7 @@ var differences =
 		"name": "restaurant-has_leader-person",
 		"imgPath": "resataurant-has_leader-person/dbp-dbp.png",
 		"diffCats": [1,15,19],
-		"description": "Difference [3.c.iv] is highlighted by openlinksw.com's framebase namespaced person object has the label 'Lynsi Martinez', which is different from the label 'Lynsi Snyder' used by other databases. However, the labels are in reality referring to the same real-world person. Difference [3b] is exhibited by how the DBPedia namespace has two different statements, one using the predicate 'Key People' and the other the 'Key Person' predicate, to indicate the leaders of a restaurant. Since the equivalency of has_leader predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
+		"description": "Difference [3.c.iv] is highlighted by how openlinksw.com's framebase-namespaced person object has the label 'Lynsi Martinez', which is different from the label 'Lynsi Snyder' used by other databases. However, the labels are in reality referring to the same real-world person. Difference [3b] is exhibited by how the DBPedia namespace has two different statements, one using the predicate 'Key People' and the other the 'Key Person' predicate, to indicate the leaders of a restaurant. Since the equivalency of has_leader predicates across databases cannot be guaranteed, all databases also exhibit difference [1ai].",
 		"databases": [
 			{
 				"dbName": "DBPedia.org",
@@ -936,6 +936,85 @@ var differences =
 					"dbName": "FactForge.org", "nsName": "Freebase->DBPedia",
 					"triples": [
 						"http://rdf.freebase.com/ns/m.0pr13 http://dbpedia.org/property/currentMembers http://dbpedia.org/resource/Jerome_Fontamillas",
+					]
+				}
+		]
+	},
+	{
+		"name": "person-nationality-nation",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q1189 https://www.wikidata.org/wiki/Property:P27 https://www.wikidata.org/wiki/Q766",
+						"https://www.wikidata.org/wiki/Property:P27 https://www.wikidata.org/wiki/Property:P1628 http://schema.org/nationality"
+					]
+				},
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia.org->DBPedia/Freebase",
+					"triples": [
+						"http://dbpedia.org/resource/Usain_Bolt http://dbpedia.org/property/nationality Jamaican@en",
+						"http://dbpedia.org/resource/Usain_Bolt http://rdf.freebase.com/ns/people.person.nationality http://dbpedia.org/resource/Jamaica"
+					]
+				}
+		]
+	},
+	{
+		"name": "person-birthplace-city",
+		"description" : "",
+		"diffCats": [7],
+		"databases": [
+				{
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q39562 https://www.wikidata.org/wiki/Property:P19 https://www.wikidata.org/wiki/Q755615",
+						"https://www.wikidata.org/wiki/Property:P19 https://www.wikidata.org/wiki/Property:P1628 http://schema.org/birthPlace",
+						"https://www.wikidata.org/wiki/Q755615 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q488668",
+						"https://www.wikidata.org/wiki/Q488668 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q1391",
+					]
+				},
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia.org->DBPedia/Freebase",
+					"triples": [
+						"http://dbpedia.org/resource/Michael_Phelps http://rdf.freebase.com/ns/people.person.place_of_birth http://dbpedia.org/resource/Towson,_Maryland",
+					]
+				}
+		]
+	},
+	{
+		"name": "food-has_ingredient-ingredient",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q375 https://www.wikidata.org/wiki/Property:P527 https://www.wikidata.org/wiki/Q29493",
+						"https://www.wikidata.org/wiki/Q29493 https://www.wikidata.org/wiki/Property:P527 https://www.wikidata.org/wiki/Q36465"
+					]
+				},
+				{
+					"dbName": "DBPedia.org",
+					"nsName": "DBPedia.org",
+					"triples": [
+						"http://dbpedia.org/resource/Waffle http://dbpedia.org/ontology/ingredient http://dbpedia.org/resource/Batter_(cooking)",
+						"http://dbpedia.org/resource/Waffle http://dbpedia.org/ontology/ingredient http://dbpedia.org/resource/Dough",
+						"http://dbpedia.org/resource/Waffle http://dbpedia.org/ontology/ingredientName 'Batterordough'",
+						"http://dbpedia.org/resource/Waffle http://dbpedia.org/property/mainIngredient 'Batter_or_dough'",
+					]
+				},
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia.org",
+					"triples": [
+						"http://dbpedia.org/resource/Waffle http://rdf.freebase.com/ns/food.dish.ingredients http://dbpedia.org/resource/Flour",
 					]
 				}
 		]

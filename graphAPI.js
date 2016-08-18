@@ -96,7 +96,7 @@ function update(newGraph, colaForce, newSvg){
     label.exit().remove();
 
     node.append("title")
-        .text(function (d) { return d.name; });
+        .text(function (d) { return d.uri; });
 
 
 
