@@ -44,6 +44,13 @@ function getAlignmentBounds(vs, c) {
     return c.bounds;
 }
 
+function linkArc(d) {
+  var dx = d.target.x - d.source.x,
+      dy = d.target.y - d.source.y,
+      dr = Math.sqrt(dx * dx + dy * dy);
+  return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+}
+
 function update(newGraph, colaForce, newSvg){
 
     d3cola = colaForce;
@@ -69,10 +76,12 @@ function update(newGraph, colaForce, newSvg){
 
     var link = svg.selectAll(".link")
         .data(graph.links);
-    link.enter().append("polyline")
-        .attr("stroke", function(d) {return d.color})
-        .attr("class", "link")
-        .attr("marker-mid", "url(#end)");
+    link.enter().append("svg:path")
+    	.attr("class", "link")
+    	.attr("marker-mid", "url(#end)")
+    	.attr("stroke", function(d) {return d.color});
+        
+        
     link.exit().remove();
 
     var guideline = svg.selectAll(".guideline")
@@ -102,8 +111,9 @@ function update(newGraph, colaForce, newSvg){
 
     d3cola.on("tick", function () {
 
-        link.attr("points", function(d) {
-              return d.source.x + "," + d.source.y + " " + (d.source.x + d.target.x)/2 + "," + (d.source.y + d.target.y)/2 + " " + d.target.x + "," + d.target.y; });
+        link.attr("d", linkArc);
+        //link.attr("points", function(d) {
+        //     return d.source.x + "," + d.source.y + " " + (d.source.x + d.target.x)/2 + "," + (d.source.y + d.target.y)/2 + " " + d.target.x + "," + d.target.y; });
 
 
         guideline

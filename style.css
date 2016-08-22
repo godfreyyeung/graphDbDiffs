@@ -185,6 +185,7 @@ svg {
 .imgBox {
   position: absolute;
   bottom: 70px;
+  max-height: 90%;
   width: 100%;
   padding: 2px;
   background: rgba(0,0,0,0.8);
@@ -193,6 +194,7 @@ svg {
 }
 .imgBox img{
   max-width: 100%;
+  max-height: 100%;
 }
 
 /*.linkDistSlider{
@@ -203,8 +205,7 @@ svg {
 
 path.link {
   fill: none;
-  stroke: #666;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 
 text, .label{

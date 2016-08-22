@@ -337,8 +337,55 @@ var labels = {
 	"http://dbpedia.org/property/mainIngredient": "dbp:mainIngredient",
 	"http://dbpedia.org/resource/Batter_(cooking)": "dbr:Batter _(cooking)",
 	"http://dbpedia.org/resource/Dough": "dbr:Dough",
-	"'Batterordough'": "'Batter or dough'",
+	"'Batter_or_dough'": "'Batter or dough'",
 	"http://dbpedia.org/resource/Flour": "dbr:Flour",
 	//ingredient freebase
 	"http://rdf.freebase.com/ns/food.dish.ingredients": "fb:food.dish.ingredients",
+	//community-located_in WikiData
+	"https://www.wikidata.org/wiki/Q5756": "wd:Community of Madrid",
+	//community-located_in 2 DBPedia
+	"http://dbpedia.org/resource/Catalonia": "dbp:Catalonia",
+	"http://dbpedia.org/property/subdivisionName": "dbp:subdivisionName",
+	"http://www.ontotext.com/proton/protontop#subRegionOf": "ptop:subRegionOf",
+	"http://www.w3.org/2002/07/owl#TransitiveProperty": "owl:TransitiveProperty",
+	"http://rdf.freebase.com/ns/base.aareas.schema.administrative_area.administrative_parent": "fb:base.aareas. schema.administrative_area .administrative_parent",
+	"http://rdf.freebase.com/ns/base.biblioness.bibs_location.country": "fb:base.biblioness. bibs_location.country",
+	"http://rdf.freebase.com/ns/location.administrative_division.country": "fb:location. administrative_division. country",
+	"http://www.geonames.org/ontology#parentFeature": "geo-ont:parentFeature",
+	"http://www.geonames.org/ontology#parentCountry": "geo-ont:parentCountry",
+	//artwork-owned_by-entity DBPedia
+	"http://dbpedia.org/resource/The_Starry_Night": "dbr:The Starry Night",
+	"http://dbpedia.org/resource/Museum_of_Modern_Art": "dbp:Museum_of_Modern_Art",
+	//artwork-owned_by-entity Freebase
+	"http://rdf.freebase.com/ns/visual_art.artwork.owners": "fb:visual_art .artwork.owners",
+	"http://www.ontotext.com/proton/protonext#ownershipOf": "pext:ownershipOf",
+	"http://www.ontotext.com/proton/protontop#Object": "ptop:Object",
+	"http://www.ontotext.com/proton/protonext#Possession": "pext:Possession",
+	"http://rdf.freebase.com/ns/m.03z5_jf": "fb:m.03z5_jf",
+	"http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship": "fb:visual_art. artwork_owner_relationship",
+	"http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship.owner": "fb:visual_art. artwork_owner_relationship. owner",
+	"http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship.artwork": "fb:visual_art. artwork_owner_relationship. artwork",
+	"http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship.date_acquired": "fb:visual_art. artwork_owner_relationship. date_acquired",
+	//artwork-artist-person dbpedia
+	"http://dbpedia.org/resource/Vincent_van_Gogh": "dbr:Vincent van Gogh",
+	"http://dbpedia.org/property/artist": "dbp:artist",
+	//artwork-artist-person fb
+	"http://rdf.freebase.com/ns/visual_art.artwork.artist": "fb:visual_art. artwork.artist",
+	"http://www.ontotext.com/proton/protonext#authorOf": "pext:authorOf",
+	"http://www.ontotext.com/proton/protontop#Agent": "ptop:Agent",
+	//war dbpedia
+	"http://dbpedia.org/resource/Six-Day_War": "dbr:Six Day War",
+	"http://dbpedia.org/resource/Middle_East": "dbr:Middle_east",
+	"http://dbpedia.org/ontology/place": "dbo:place of military conflict",
+	"http://dbpedia.org/ontology/MilitaryConflict": "dbo:Military Conflict",
+	"http://dbpedia.org/ontology/Place": "dbo:Place",
+	"http://dbpedia.org/property/place": "dbp:place",
+	//city-located_in-region WikiData
+	"https://www.wikidata.org/wiki/Q6106": "wd:Portland",
+	"https://www.wikidata.org/wiki/Q450374": "wd:Multnomah County",
+	"https://www.wikidata.org/wiki/Property:P361": "wd:Part of",
+	"https://www.wikidata.org/wiki/Q486972": "wd:Human Settlement",
+	"https://www.wikidata.org/wiki/Q56061": "wd:administrative territorial entity",
+	"https://www.wikidata.org/wiki/Q515": "wd:city",
+	"https://www.wikidata.org/wiki/Q1549591": "wd:big city",
 }

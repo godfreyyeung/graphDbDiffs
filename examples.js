@@ -738,9 +738,10 @@ var differences =
 				"dbName": "WikiData.org",
 				"nsName": "WikiData",
 				"triples": [
+					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29",
 					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q8818",
 					"https://www.wikidata.org/wiki/Q8818 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29",
-					"https://www.wikidata.org/wiki/Q202762 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29"
+					"https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P131"
 				]
 			},
 			{
@@ -1018,5 +1019,141 @@ var differences =
 					]
 				}
 		]
-	}
+	},
+	{
+		"name": "community-located_in-country",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q5756 https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Q29",
+						"https://www.wikidata.org/wiki/Q5756 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q29",
+						"https://www.wikidata.org/wiki/Property:P17 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P131",
+					]
+				},
+		]
+	},
+	{
+		"name": "community-located_in-country #2",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia",
+					"imgPath": "community-located_in-country2/factforge-dbpedia.png",
+					"triples": [
+						"http://dbpedia.org/resource/Catalonia http://dbpedia.org/property/subdivisionName http://dbpedia.org/resource/Spain",
+						"http://dbpedia.org/resource/Catalonia http://dbpedia.org/ontology/country http://dbpedia.org/resource/Spain",
+						"http://dbpedia.org/resource/Catalonia http://rdf.freebase.com/ns/location.location.containedby http://dbpedia.org/resource/Spain",
+						"http://rdf.freebase.com/ns/location.location.containedby https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protontop#subRegionOf",
+						"http://www.ontotext.com/proton/protontop#subRegionOf http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/2002/07/owl#TransitiveProperty",
+						"http://www.ontotext.com/proton/protontop#subRegionOf https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protontop#locatedIn",
+						"http://dbpedia.org/resource/Catalonia http://rdf.freebase.com/ns/base.aareas.schema.administrative_area.administrative_parent http://dbpedia.org/resource/Spain",
+						"http://dbpedia.org/resource/Catalonia http://rdf.freebase.com/ns/base.biblioness.bibs_location.country http://dbpedia.org/resource/Spain",
+						"http://dbpedia.org/resource/Catalonia http://rdf.freebase.com/ns/location.administrative_division.country http://dbpedia.org/resource/Spain",
+						"http://dbpedia.org/resource/Catalonia http://www.geonames.org/ontology#parentFeature http://dbpedia.org/resource/Spain",
+						"http://www.geonames.org/ontology#parentFeature https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protontop#subRegionOf",
+						"http://dbpedia.org/resource/Catalonia http://www.geonames.org/ontology#parentCountry http://dbpedia.org/resource/Spain",
+					]
+				},
+		]
+	},
+	{
+		"name": "artwork-owned_by-entity",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia->Freebase/ptop",
+					"triples": [
+						"http://dbpedia.org/resource/The_Starry_Night http://rdf.freebase.com/ns/visual_art.artwork.owners http://rdf.freebase.com/ns/m.03z5_jf",
+						"http://rdf.freebase.com/ns/visual_art.artwork.owners https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protonext#ownershipOf",
+						"http://www.ontotext.com/proton/protonext#ownershipOf http://www.w3.org/2000/01/rdf-schema#domain http://www.ontotext.com/proton/protontop#Object",
+						"http://www.ontotext.com/proton/protonext#ownershipOf http://www.w3.org/2000/01/rdf-schema#range http://www.ontotext.com/proton/protonext#Possession",
+						"http://rdf.freebase.com/ns/m.03z5_jf http://rdf.freebase.com/ns/type.object.type http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship",
+						"http://rdf.freebase.com/ns/m.03z5_jf http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship.owner http://dbpedia.org/resource/Museum_of_Modern_Art",
+						"http://rdf.freebase.com/ns/m.03z5_jf http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship.artwork http://dbpedia.org/resource/The_Starry_Night",
+						"http://rdf.freebase.com/ns/m.03z5_jf http://rdf.freebase.com/ns/visual_art.artwork_owner_relationship.date_acquired '1941'",
+					]
+				},
+		]
+	},
+	{
+		"name": "artwork-artist-person",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia->DBPedia/Freebase",
+					"triples": [
+						"http://dbpedia.org/resource/The_Starry_Night http://dbpedia.org/property/artist http://dbpedia.org/resource/Vincent_van_Gogh",
+						"http://dbpedia.org/resource/The_Starry_Night http://rdf.freebase.com/ns/visual_art.artwork.artist http://dbpedia.org/resource/Vincent_van_Gogh",
+						"http://rdf.freebase.com/ns/visual_art.artwork.artist https://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontotext.com/proton/protonext#authorOf",
+						"http://www.ontotext.com/proton/protonext#authorOf http://www.w3.org/2000/01/rdf-schema#domain http://www.ontotext.com/proton/protontop#Object",
+						"http://www.ontotext.com/proton/protonext#authorOf http://www.w3.org/2000/01/rdf-schema#range http://www.ontotext.com/proton/protontop#Agent",
+					]
+				},
+		]
+	},
+	{
+		"name": "war-located_in-location",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "FactForge.org",
+					"nsName": "DBPedia->DBPedia/Freebase",
+					"triples": [
+						"http://dbpedia.org/page/Six-Day_War http://dbpedia.org/ontology/place http://dbpedia.org/resource/Middle_East",
+						"http://dbpedia.org/page/Six-Day_War http://dbpedia.org/property/place http://dbpedia.org/resource/Middle_East",
+						"http://dbpedia.org/ontology/place http://www.w3.org/2000/01/rdf-schema#domain http://dbpedia.org/ontology/MilitaryConflict",
+						"http://dbpedia.org/ontology/place http://www.w3.org/2000/01/rdf-schema#range http://dbpedia.org/ontology/PopulatedPlace",
+						"http://dbpedia.org/ontology/place http://www.w3.org/2000/01/rdf-schema#subPropertyOf http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation",
+						"http://dbpedia.org/ontology/PopulatedPlace http://www.w3.org/2000/01/rdf-schema#subClassOf http://dbpedia.org/ontology/Place",
+						"http://dbpedia.org/ontology/Place http://www.w3.org/2002/07/owl#equivalentClass http://dbpedia.org/ontology/Location",
+						"http://dbpedia.org/ontology/Place http://www.w3.org/2002/07/owl#equivalentClass http://schema.org/Place",
+					]
+				},
+		]
+	},
+	{
+		"name": "city-located_in-region",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q6106 https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Q450374",
+						"https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P361",
+						//"https://www.wikidata.org/wiki/Property:P131 https://www.wikidata.org/wiki/Property:P1647 https://www.wikidata.org/wiki/Property:P361"
+					]
+				},
+		]
+	},
+	{
+		"name": "entity-instance_of-class",
+		"description" : "",
+		"diffCats": [],
+		"databases": [
+				{
+					"dbName": "WikiData.org",
+					"nsName": "WikiData",
+					"triples": [
+						"https://www.wikidata.org/wiki/Q6106 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q515",
+						"https://www.wikidata.org/wiki/Q6106 https://www.wikidata.org/wiki/Property:P31 https://www.wikidata.org/wiki/Q1549591",
+						"https://www.wikidata.org/wiki/Q515 https://www.wikidata.org/wiki/Property:P279 https://www.wikidata.org/wiki/Q486972",
+						"https://www.wikidata.org/wiki/Q486972 https://www.wikidata.org/wiki/Property:P279 https://www.wikidata.org/wiki/Q56061",
+						"https://www.wikidata.org/wiki/Q1549591 https://www.wikidata.org/wiki/Property:P279 https://www.wikidata.org/wiki/Q515",
+					]
+				},
+		]
+	},
 ]
